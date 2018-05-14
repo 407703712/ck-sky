@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="section" >  
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" mode = "selector">  
+      <view class="picker">  
+        国家：{{objectArray[index]}}  
+      </view>  
+    </picker>  
+</view>  
+  <view class="section">  
+   <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">  
+    <view class="picker">  
+     时间 : {{times}}
+    </view>  
+   </picker>  
+  </view>  
+</view>
