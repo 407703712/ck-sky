@@ -1,0 +1,39 @@
+.top-contain{
+  background: #D7C2A0;
+  text-align: center;
+  color: white;
+  font-size: 26rpx;
+  padding: 50rpx 0;
+}
+.money-num{
+  font-size: 50rpx;
+  width: 100%;  
+  margin-top: 20rpx;
+}
+.form-contain{
+  padding-left: 30rpx;
+}
+.form-list{
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0;
+  position: relative;
+  font-size: 28rpx;
+  color: #444;
+}
+.form-list::after{
+  content: "";
+  position: absolute;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); 	/* IE 9 */
+  -moz-transform:rotate(45deg); 	/* Firefox */
+  -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+  -o-transform:rotate(45deg); 	/* Opera */
+  width: 20rpx;
+  height: 20rpx;
+  border: 2px solid #ccc;
+  border-left: none;
+  border-bottom: none;
+  top: 50%;
+  right: 20rpx;
+  margin-top: -10rpx;
+}

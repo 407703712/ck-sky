@@ -1,0 +1,13 @@
+<!--placeOrder.wxml-->
+<view class='top-contain'>
+<view>预估维修价</view> 
+<view class='money-num'>{{moneyNum}}</view>
+</view>
+<view class='form-contain'>
+  <view class='form-list'>
+    重选故障
+  </view>
+  <view class='form-list'>
+    故障详情
+  </view>
+</view>
