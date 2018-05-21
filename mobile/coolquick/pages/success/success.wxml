@@ -1,0 +1,12 @@
+<!--placeOrder.wxml-->
+<view class="logo-contain">
+	<icon type="success" class="s-icon" size="80"/>
+</view>
+<view class="success-txt">下单成功</view>
+<view class="list-item" wx:for="{{listsData}}">
+  <view class="shop-content">门店地址：{{item.address}}</view>
+  <view class="shop-content">服务时间：{{item.time}}</view>
+  <view class="shop-content">联系电话：{{item.traffic}}</view>
+</view>
+<view class="go-index btn-item">返回首页</view>
+<view class="go-place btn-item">查看订单</view>

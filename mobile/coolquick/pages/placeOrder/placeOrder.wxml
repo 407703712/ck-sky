@@ -1,0 +1,68 @@
+<!--placeOrder.wxml-->
+<view class="back-contain">
+  <view class='top-contain'>
+    <view>预估维修价</view> 
+    <view class='money-num'>{{moneyNum}}</view>
+  </view>
+  <view class='form-contain'>
+    <view class='form-list'>
+      重选故障
+    </view>
+    <view class='form-list '>
+      故障详情
+    </view>
+    <view class="form-select-contain top-jg-border">
+    	<view class="form-list-title">机身颜色</view>
+    	<view class="select-btn-contain">
+    		<view class="select-btn {{index==activeIndexC?'active':''}}" wx:for="{{phoneColors}}" data-id="{{index}}" bindtap="selectColors">
+    			{{item}}
+    		</view>
+    	</view>
+    </view>
+    <view class="form-select-contain" style="padding-top: 0;">
+      <view class="form-list-title">维修方式</view>
+      <view class="select-btn-contain" style="padding-bottom: 0;border-bottom: none;">
+        <view class="select-btn {{index==activeIndexM?'active':''}}" wx:for="{{repairMethod}}" data-id="{{index}}" bindtap="selectMethods">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view class="messageBox">
+      详细信息
+    </view>
+    <view class='form-input-list'>
+      <view class="input-text">名字</view>
+      <input type="text" placeholder="请输入您的名字" name="username" class="list-input" />
+    </view>
+    <view class='form-input-list'>
+      <view class="input-text">联系方式</view>
+      <input type="text" placeholder="请输入您的联系方式" name="phoneNum" class="list-input" />
+    </view>
+    <view class='form-input-list'>
+      <view class="input-text">备注</view>
+      <input type="text" placeholder="请输入您的备注" name="description" class="list-input" />
+    </view>
+    <view class='form-list '>
+      选择门店
+    </view>
+    <view class="messageBox">
+      其他优惠
+    </view>
+    <view class='form-list '>
+      优惠券
+    </view>
+    <view class='form-input-list'>
+      <view class="input-text">兑换码</view>
+      <input type="text" placeholder="请输入您的兑换码" name="dhnum" class="list-input" />
+    </view>
+    <view class="protocol-contain">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox" >
+            <checkbox value="protocol" checked=""/>
+            <view style="vertical-align: bottom;display: inline;">我已详细阅读并同意《用户服务协议》</view>
+          </label>
+        </checkbox-group>
+    </view>
+    <button type="default" size="{{defaultSize}}" bindtap="default" class="submit-btn"> 立即维修 </button>
+  </view>
+</view>

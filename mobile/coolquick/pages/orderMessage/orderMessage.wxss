@@ -1,0 +1,117 @@
+page{
+	background-color: #f8f8f8;
+}
+.list-text-item{
+	border-bottom: 1px solid #eee;
+	background-color: #fff;
+	padding:20rpx 30rpx;
+}
+.list-name{
+	color: #999;
+	font-size: 28rpx;
+	width: 25%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.list-content{
+	display: inline-block;
+	color: #111;
+	font-size: 28rpx;
+	width: 75%;
+	text-align: right;
+	vertical-align: middle;
+}
+.messageBox{
+  background-color: #F8F8F8;
+  font-size: 28rpx;
+  color: #999;
+  padding: 30rpx 0 12rpx 30rpx;
+}
+.message-model{
+	background-color: #fff;
+	padding-bottom: 0;
+}
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}
+.btn-contain{
+	margin-top: 30rpx;
+}
+.btn-contain view{
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 36rpx;
+	padding: 18rpx 0;
+}
+.cancel-btn{
+	text-align: right;
+	width: 65%;
+	color: #D2B88F;
+	border-top: 1px solid #eee;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding-right: 40rpx;
+}
+.pay-btn{
+	width: 35%;
+	background-color: #D2B88F;
+	color: white;
+}
+.layer-contain{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.5);
+}
+.layer-title{
+	text-align: center;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #eee;	
+	margin-bottom: 20rpx;
+}
+.layer-content{
+	
+	background-color: #fff;
+	border-radius: 20rpx;
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 20rpx;
+	margin-top: 80rpx;
+}
+.subbtn{
+	margin: 0 auto;
+	width: 90%;
+	text-align: center;
+	background-color:#D2B88F ;
+	color:white ;
+	padding: 16rpx 0;
+	border-radius: 60rpx;
+}
+label{
+	display: block;
+	margin-bottom: 20rpx;
+	font-size: 28rpx;
+	color: #333;
+	padding-left: 5%;
+}
+textarea{
+	background: #F8F8F8;
+	width: 90%;
+	margin: 0 auto;
+	padding: 26rpx 12rpx;
+	height: 100rpx;
+	margin-bottom: 40rpx;
+	font-size: 28rpx;
+}
+.close-img{
+	display: block;
+	margin: 0 auto;
+	width: 64rpx;
+	margin-top: 40rpx;
+}
