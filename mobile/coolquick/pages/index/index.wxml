@@ -1,24 +1,50 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="section" >  
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" mode = "selector">  
-      <view class="picker">  
-        国家：{{objectArray[index]}}  
-      </view>  
-    </picker>  
-</view>  
-  <view class="section">  
-   <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">  
-    <view class="picker">  
-     时间 : {{times}}
-    </view>  
-   </picker>  
-  </view>  
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='phone-model-show-contain'>
+  <view class='phone-show'>
+      <image mode='widthFix' src='{{phoneLogo}}' class='phoneLogo'></image>
+      <view class='phone-model-text'>
+         <view style="font-size: 26rpx;color: #9B9B9B;margin-bottom: 20rpx;">
+          检测到您的手机为:
+         </view>
+         <view>{{phoneModel}}</view>
+      </view>
+    </view>
+  <view><button size='mini' class="change-model-button" bindtap='goSelect'>更换机型</button></view>
 </view>
+<view class="select-contain">
+  <view class="select-title">请选择您设备的故障问题（可多选）：</view>
+  <view class="select-btn-contain">
+     <view wx:for="{{faultArr}}" class="fault-item" bindtap="showLayer">
+       {{item}}
+     </view>
+  </view>
+</view>
+<view class='inner-footer'>
+  <view class='money-contain'>预估价格： <view class='money-num'>{{showMoney}}</view></view>
+  <button class='yuyue-btn' bindtap="goPlaceOrder">立即预约</button>
+</view>
+<view class="layer-contain {{showLayer===false?'hide':'show'}}">
+  <view class="layer-content">
+    <view class='layer-title'>屏幕故障</view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <view>
+          <checkbox value="{{item.name}}" checked="{{item.checked}}"/>
+          <view class="item-price">{{item.price}}</view>
+          {{item.content}}
+        </view>
+      </label>
+    </checkbox-group>
+    <view class="descript-text"><view>备注：</view>{{descriptsTxt}}</view>
+    <view class="subbtn">确定</view>
+  </view>
+  <image src="../images/close.png" class="close-img" bindtap="closeLayer" mode='widthFix'></image>
+ </view>

@@ -1,30 +1,17 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/orderMessage/orderMessage",
+    "pages/success/success",
+    "pages/selectShop/selectShop",
+    "pages/placeOrder/placeOrder",
     "pages/logs/logs",
-    "pages/maps/maps"
+    "pages/phoneModel/phoneModel"
   ],
-  "tabBar": {
-    "position":"bottom",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      },
-      {
-        "pagePath": "pages/maps/maps",
-        "text": "地图"
-      }
-    ]
-  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "酷快手机维修",
     "navigationBarTextStyle":"black"
   }
 }

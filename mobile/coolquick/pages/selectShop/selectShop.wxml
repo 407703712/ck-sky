@@ -1,0 +1,15 @@
+<!--placeOrder.wxml-->
+<view class="shop-list-contain">
+  <view class="list-item" wx:for="{{listsData}}">
+      <view class="item-top">
+        <view class="shop-name">{{item.shopName}}</view>
+        <view class="shop-content">门店地址：{{item.address}}</view>
+        <view class="shop-content">营业时间：{{item.time}}</view>
+        <view class="shop-content">交通指引：{{item.traffic}}</view>
+      </view>  
+      <view class="btn-contain">
+        <view class="call-shop btn-itme">联系店家</view>
+        <view class="call-map btn-itme">查看路线</view>
+      </view>
+  </view>
+</view>
