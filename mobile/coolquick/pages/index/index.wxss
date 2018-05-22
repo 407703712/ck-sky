@@ -171,3 +171,7 @@ textarea{
   margin: 0 auto;
   margin-bottom: 20rpx;
 }
+.enter{
+  background-color: #C8A876;
+  color: white;
+}

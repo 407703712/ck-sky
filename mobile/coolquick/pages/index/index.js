@@ -21,13 +21,14 @@ Page({
     showMoney:"￥0.00",
     isYuyue:false,
     items: [
-      {name: 'USA', content: '超出了上门维修的范围',price:"￥99.00"},
-      {name: 'CHN', content: '下错单了',price:"￥99.00"},
-      {name: 'BRA', content: '不想到店维修',price:"￥99.00"},
-      {name: 'JPN', content: '等待时间太久',price:"￥99.00"},
-      {name: 'ENG', content: '设备已恢复正常',price:"￥99.00"},
-      {name: 'TUR', content: '不放心取机维修',price:"￥99.00"},
+      {name: 'USA', content: '超出了上门维修的范围',price:"￥99.00",checked:true},
+      {name: 'CHN', content: '下错单了',price:"￥99.00",checked:false},
+      {name: 'BRA', content: '不想到店维修',price:"￥99.00",checked:false},
+      {name: 'JPN', content: '等待时间太久',price:"￥99.00",checked:false},
+      {name: 'ENG', content: '设备已恢复正常',price:"￥99.00",checked:false},
+      {name: 'TUR', content: '不放心取机维修',price:"￥99.00",checked:false},
     ],
+    pushgzList:[],//传送给维修方案页面的故障列表数据
     descriptsTxt:"1：大阿斯达阿斯达阿斯达哇所多阿斯达䦺地方水电费；2：何贵何贱同一句话铁公鸡一发过火头发；3：电饭锅热点覆盖人地方电饭锅帝国电饭锅",
   },
   checkboxChange: function(e) {
@@ -70,6 +71,23 @@ Page({
     wx.setNavigationBarTitle({
       title: '维修方案'//页面标题为路由参数
     })
+  },
+  checkboxChange:function(e){
+    console.log(e);
+    var arr=e.detail.value;
+    var pushArr=[];
+    var items=this.data.items;
+    for(var x in arr){
+      for(var y in items){
+        if(items[y].name==arr[x]){
+          pushArr.push(items[y]);
+        }
+      }
+    }
+    console.log(pushArr);
+  },  
+  selectMb:function(){
+
   }
  
 })

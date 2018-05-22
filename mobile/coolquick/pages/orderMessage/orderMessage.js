@@ -19,7 +19,7 @@ Page({
    	orderState:true,
    	showLayer:false,
    	items: [
-      {name: 'USA', value: '超出了上门维修的范围'},
+      {name: 'USA', value: '超出了上门维修的范围',},
       {name: 'CHN', value: '下错单了', checked: 'true'},
       {name: 'BRA', value: '不想到店维修'},
       {name: 'JPN', value: '等待时间太久'},

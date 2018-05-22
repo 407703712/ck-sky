@@ -5,7 +5,7 @@
     <view class='money-num'>{{moneyNum}}</view>
   </view>
   <view class='form-contain'>
-    <view class='form-list'>
+    <view class='form-list' bindtap="goIndex">
       重选故障
     </view>
     <view class='form-list '>
@@ -30,20 +30,48 @@
     <view class="messageBox">
       详细信息
     </view>
-    <view class='form-input-list'>
+    <view class='form-list {{isShangmen?"show":"hide"}}' bindtap="goAddress" data-flag="address">
+      <view class="inline {{isGetAdress?'hide':'show'}}">请选择服务地址</view>
+      <view class="detail-box {{isGetAdress?'show':'hide'}}">
+          <view class="getname">姓名：{{getname}}</view>
+          <view class="getphone">电话：{{getphone}}</view>
+          <view class="getaddres">地址：{{getaddress}}</view>
+      </view>
+    </view>
+    <view class='form-list {{isShangmen?"show":"hide"}}'>
+      请选择上门时间
+    </view>
+    <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">名字</view>
       <input type="text" placeholder="请输入您的名字" name="username" class="list-input" />
     </view>
-    <view class='form-input-list'>
+    <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">联系方式</view>
       <input type="text" placeholder="请输入您的联系方式" name="phoneNum" class="list-input" />
+    </view>
+    <view class='form-list {{isDaodian?"show":"hide"}}' bindtap="goSelectShop">
+      <view class="inline {{isGetShop?'hide':'show'}}">选择门店</view>
+      <view class="detail-box {{isGetShop?'show':'hide'}}">
+          <view class="getname">门店地址：{{shopAddress}}</view>
+          <view class="getphone">服务时间：{{shopTime}}</view>
+          <view class="getaddres">联系电话：{{shopPhone}}</view>
+      </view>
+    </view>
+    <view class='form-list {{isYouji?"show":"hide"}}' bindtap="goAddress" data-flag="email">
+      <view class="inline {{isGetEmail?'hide':'show'}}">请填写您的回寄地址</view>
+      <view class="detail-box {{isGetEmail?'show':'hide'}}">
+          <view class="getname">姓名：{{emailgetname}}</view>
+          <view class="getphone">电话：{{emailgetphone}}</view>
+          <view class="getaddres">地址：{{emailgetaddres}}</view>
+      </view>
+    </view>
+    <view class='form-input-list {{isXianchang?"show":"hide"}} {{isXianchang?"show":"hide"}}'>
+      <view class="input-text">工程师编号</view>
+      <input type="text" placeholder="请输入工程师编号" name="phoneNum" class="list-input" />
     </view>
     <view class='form-input-list'>
       <view class="input-text">备注</view>
       <input type="text" placeholder="请输入您的备注" name="description" class="list-input" />
-    </view>
-    <view class='form-list '>
-      选择门店
     </view>
     <view class="messageBox">
       其他优惠
@@ -59,10 +87,19 @@
         <checkbox-group bindchange="checkboxChange">
           <label class="checkbox" >
             <checkbox value="protocol" checked=""/>
-            <view style="vertical-align: bottom;display: inline;">我已详细阅读并同意《用户服务协议》</view>
+            <view style="vertical-align: bottom;display: inline;">我已详细阅读并同意</view>
           </label>
+            <view style="display: inline;vertical-align: bottom;">《用户服务协议》</view>
         </checkbox-group>
     </view>
     <button type="default" size="{{defaultSize}}" bindtap="default" class="submit-btn"> 立即维修 </button>
+    <!-- <button open-type="openSetting" size="{{defaultSize}}" class="submit-btn"> 立即维修 </button> -->
+  </view>
+  <view class="layer {{showLayer?'show':'hide'}}">
+    <view class="layer-content">
+      <view style="font-size: 30rpx; color: #444;margin-bottom: 80rpx;">请求获取您的地址权限！</view>
+       <button open-type="openSetting" type="primary" size="mini" style="margin-right: 60rpx;" bindtap="hideLayer">确定</button>
+       <button type="default" size="mini" bindtap="hideLayer">取消</button>
+    </view>
   </view>
 </view>
