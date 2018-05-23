@@ -22,14 +22,14 @@
 <view class="select-contain">
   <view class="select-title">请选择您设备的故障问题（可多选）：</view>
   <view class="select-btn-contain">
-     <view wx:for="{{faultArr}}" class="fault-item {{isEnter?'enter':''}}" bindtap="showLayer">
+     <view wx:for="{{faultArr}}" class="fault-item {{index==isEnter[index]?'enter':''}}" bindtap="showLayer" data-enter="{{index}}">
        {{item}}
      </view>
   </view>
 </view>
 <view class='inner-footer'>
-  <view class='money-contain'>预估价格： <view class='money-num'>{{showMoney}}</view></view>
-  <button class='yuyue-btn' bindtap="goPlaceOrder" disabled="{{isYuyue}}">立即预约</button>
+  <view class='money-contain'>预估价格： <view class='money-num'>￥{{allMoney}}</view></view>
+  <button class='yuyue-btn' bindtap="goPlaceOrder" >立即预约</button>
 </view>
 <view class="layer-contain {{showLayer===false?'hide':'show'}}">
   <view class="layer-content">
@@ -44,7 +44,7 @@
       </label>
     </checkbox-group>
     <view class="descript-text"><view>备注：</view>{{descriptsTxt}}</view>
-    <view class="subbtn" bintap="selectMb">确定</view>
+    <view class="subbtn" bindtap="selectMb">确定</view>
   </view>
   <image src="../images/close.png" class="close-img" bindtap="closeLayer" mode='widthFix'></image>
  </view>

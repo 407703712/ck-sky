@@ -67,10 +67,9 @@
   float: left;
   margin-right: 20rpx;
   border-radius: 40rpx;
-  width: 22%;
-  padding: 20rpx 0;
-  font-size: 30rpx;
-  background-color: 
+  width: 19%;
+  padding: 14rpx 10rpx;
+  font-size: 28rpx;
 }
 .top-jg-border{
   margin-top: 30rpx;
