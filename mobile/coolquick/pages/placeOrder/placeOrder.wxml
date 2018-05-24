@@ -8,7 +8,7 @@
     <view class='form-list' bindtap="goIndex">
       重选故障
     </view>
-    <view class='form-list '>
+    <view class='form-list' bindtap="showGzList">
       故障详情
     </view>
     <view class="form-select-contain top-jg-border">
@@ -100,6 +100,15 @@
       <view style="font-size: 30rpx; color: #444;margin-bottom: 80rpx;">请求获取您的地址权限！</view>
        <button open-type="openSetting" type="primary" size="mini" style="margin-right: 60rpx;" bindtap="hideLayer">确定</button>
        <button type="default" size="mini" bindtap="hideLayer">取消</button>
+    </view>
+  </view>
+  <view class="layer {{showListLayer?'show':'hide'}}">
+    <view class="layer-content" style="position: relative;padding: 80rpx 20rpx;">
+      <view class="close-contian" bindtap="closeListLayer"><image src="../images/close.png" mode='widthFix' style="width: 100%;"></image></view>
+      <view style="font-size: 30rpx; color: #444;margin-bottom: 50rpx;">{{phoneName}}</view>
+       <view class='layer-list' wx:for="{{gzLists}}">
+         <view style="color: #FCB844;float: right;">{{item.price}}</view>{{item.name}}
+       </view>
     </view>
   </view>
 </view>

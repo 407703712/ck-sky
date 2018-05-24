@@ -15,13 +15,19 @@ Page({
     isYouji:false,
     isXianchang:false,
     showLayer:false,
-    isGetShop:false
+    isGetShop:false,
+    gzLists:[]
   },
   selectColors:function(e){ //点击切换机身颜色
     var self=this;
     var selectActive = e.currentTarget.dataset.id;  //获取自定义的ID值的ID值  
     this.setData({
       activeIndexC: selectActive
+    });
+  },
+  closeListLayer:function(){
+    this.setData({
+      showListLayer: false
     });
   },
   selectMethods:function(e){ //点击切换维修方式
@@ -137,15 +143,39 @@ Page({
     })
   },
   goIndex:function(){
-    wx.navigateTo({
-      url:'../index/index'
+    wx.navigateBack({
+      delta:1
     });
-    wx.setNavigationBarTitle({
-      title: '酷快手机维修'//页面标题为路由参数
-    })
+    // wx.setNavigationBarTitle({
+    //   title: '酷快手机维修'//页面标题为路由参数
+    // })
+  },
+  showGzList:function(){
+    this.setData({
+        showListLayer:true,
+      });
   },
   onLoad:function(option){
     // var query=option.query;
+    if (option.allMoney) {
+      var allItems=JSON.parse(option.allItems);
+      var gzLists=[];
+      for(var x in allItems){
+        for(var y in allItems[x]){
+          if(allItems[x][y]){
+            var obj={"name":allItems[x][y].content,"price":allItems[x][y].price}
+            gzLists.push(obj);
+          }
+        }
+      }
+      console.log("gzLists",gzLists);
+      this.setData({
+        allMoney:option.moneyNum,
+        phoneName:option.phoneName,
+        gzLists:gzLists
+      });
+    }
+
     console.log(option);
     if (option.shopAddress) {
       this.setData({

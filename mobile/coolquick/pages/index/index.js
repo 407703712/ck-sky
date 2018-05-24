@@ -72,6 +72,10 @@ Page({
   },
   goPlaceOrder:function(){
     var notYuyue=this.data.notYuyue;
+    var allMoney=this.data.allMoney;
+    var allItems=JSON.stringify(this.data.allItems);
+    var phoneModel=this.data.phoneModel;
+    var postInfo="allMoney="+allMoney+"&allItems="+allItems+"&phoneName="+phoneModel;
     if (notYuyue) {
       wx.showModal({
         title:"提示",
@@ -81,7 +85,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url:'../placeOrder/placeOrder'
+      url:'../placeOrder/placeOrder?'+postInfo
     });
     wx.setNavigationBarTitle({
       title: '维修方案'//页面标题为路由参数
@@ -212,5 +216,24 @@ Page({
       }
       return false;
     // console.log("this.data.allMoney",this.data.allMoney);
+  },
+  onLoad:function(option){
+    var self=this;
+    if (option.modelName) {
+      this.setData({
+       phoneModel:option.modelName,
+       phoneLogo:option.phoneLogo
+      });
+      return false
+    }
+    wx.getSystemInfo({
+      success:function(res){
+        var phoneModel=res.model.split('<')[0];
+        console.log(phoneModel);
+        self.setData({
+          phoneModel:phoneModel
+        })
+      }
+    })
   }
 })

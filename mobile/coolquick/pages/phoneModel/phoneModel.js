@@ -60,6 +60,13 @@ Page({
       })
     } 
   },
+  goIndex:function(e){
+    var message = e.currentTarget.dataset.message;  //获取自定义的flag值  
+    var Index='../index/index?'+message;
+    wx.reLaunch({
+      url:Index
+    });
+  },
   onLoad:function(){
   }
  
