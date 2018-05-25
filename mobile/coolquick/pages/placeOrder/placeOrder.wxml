@@ -104,7 +104,7 @@
   </view>
   <view class="layer {{showListLayer?'show':'hide'}}">
     <view class="layer-content" style="position: relative;padding: 80rpx 20rpx;">
-      <view class="close-contian" bindtap="closeListLayer"><image src="../images/close.png" mode='widthFix' style="width: 100%;"></image></view>
+      <image src="../images/close_gray.png" mode='widthFix' style="width: 60rpx;height: 60rpx;" class="close-contian" bindtap="closeListLayer"></image>
       <view style="font-size: 30rpx; color: #444;margin-bottom: 50rpx;">{{phoneName}}</view>
        <view class='layer-list' wx:for="{{gzLists}}">
          <view style="color: #FCB844;float: right;">{{item.price}}</view>{{item.name}}
