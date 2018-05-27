@@ -8,5 +8,5 @@
   <view class="shop-content">服务时间：{{item.time}}</view>
   <view class="shop-content">联系电话：{{item.traffic}}</view>
 </view>
-<view class="go-index btn-item">返回首页</view>
-<view class="go-place btn-item">查看订单</view>
+<view class="go-index btn-item" bindtap="goIndex">返回首页</view>
+<view class="go-place btn-item" bindtap="goback">查看订单</view>

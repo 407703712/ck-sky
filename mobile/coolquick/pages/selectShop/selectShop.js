@@ -25,13 +25,23 @@ Page({
   	})
   },
   goPlaceOrder:function(e){
-    var message = e.currentTarget.dataset.message;  //获取自定义的flag值  
-    var placeOrderUrl='../placeOrder/placeOrder?'+message;
-    wx.navigateTo({
-      url:placeOrderUrl
-    });
-    wx.setNavigationBarTitle({
-      title: '维修方案'//页面标题为路由参数
+    // var message = e.currentTarget.dataset.message;  //获取自定义的flag值  
+    var shopAddress=e.currentTarget.dataset.shopaddress;
+    var shopTime=e.currentTarget.dataset.shoptime;
+    var shopPhone=e.currentTarget.dataset.shopphone;
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    prevPage.setData({
+        shopAddress:shopAddress,
+        shopTime:shopTime,
+        shopPhone:shopPhone,
+        isGetShop:true
+    })
+    // var placeOrderUrl='../placeOrder/placeOrder?'+message;
+    console.log(shopAddress);
+    wx.navigateBack({
+      delta:1
     })
   },
   onLoad:function(){

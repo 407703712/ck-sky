@@ -1,0 +1,102 @@
+一、业务流程接口
+
+    1. 获取手机品牌
+    https://apikk.zikang123.com/mobile/brand
+
+    2. 获取手机品牌
+    https://apikk.zikang123.com/mobile/series?brand_id=1
+    brand_id 第1个接口返回的 id
+
+    3. 搜索手机系列
+    https://apikk.zikang123.com/mobile/series_search?series_name=iPhone X
+    series_name 需要搜索的名称
+
+    4. 手机配件
+    https://apikk.zikang123.com/mobile/fitting?series_id=1
+    series_id 第2个接口返回的 id
+
+    5. 具体问题
+    https://apikk.zikang123.com/mobile/problem?series_fitting_id=1
+    series_fitting_id 第4个接口返回的 id
+
+    6. 获取门店
+    https://apikk.zikang123.com/mobile/shop?lng=113.836441&lat=22.677152
+    lng 用户坐标地址精度
+    lat 用户坐标地址纬度
+
+    7. 获取手机颜色
+    https://apikk.zikang123.com/mobile/color?series_id=1
+    series_id 第2个接口返回的 id
+
+    8. 生成订单
+    https://apikk.zikang123.com/mobile/order?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&problem=1,2,3&shop_id=1&color=1&repair_type=1&real_name=张三&mobile=18500001234&remark=用户留言
+    openid 用户小程序的openid
+    problem 第4个接口返回的id
+    shop_id 第6个接口返回的id
+    color 第7个接口返回的id
+    repair_type 维修方式。1-到店维修 2-上门维修 3-邮寄维修 4-现场维修
+    real_name 用户填写的姓名
+    mobile 用户填写的手机号码
+    remark 用户填写的备注信息
+
+    返回信息：
+    200 正常状态。返回订单编号 order_no
+    其他状态码，返回错误信息
+
+    9. 订单接口页
+    https://apikk.zikang123.com/mobile/order_result?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&order_no=15274116553993625200001
+    openid 用户小程序的openid
+    order_no 第8个接口返回的order_no
+
+    10. 订单详情
+    https://apikk.zikang123.com/mobile/order_detail?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&order_no=15274116553993625200001
+    openid 用户小程序的openid
+    order_no 第8个接口返回的order_no
+
+    返回信息
+    200 正常状态
+      order 中包含： order_no订单编号， shop_id店铺id, price总价， repair_type维修类型, status订单状态
+      extend 中包含：fitting_name设备名称， brand_name手机品牌， series_name手机系列，维修价格。 注释：可能是多维数组。
+      user 中包含：real_name用户姓名， mobile手机号码， remark用户备注
+      shop 中包含：name店铺名称，address店铺地址，telephone店铺座机号码，intro店铺介绍，business_begin_time营业开始时间，business_end_time营业结束时间，traffic交通线路，door_to_door是否支持上门服务
+
+    11. 用户取消订单
+    https://apikk.zikang123.com/mobile/chargeback?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&order_no=15274116553993625200001&reason=取消订单
+    openid 用户小程序的openid
+    order_no 第8个接口返回的order_no
+    reason 用户选择或者填写的原因
+
+    状态码：
+        '200' => '正常',
+        '400' => '缺少公共必传参数或者业务必传参数',
+        '401' => '接口校验失败',
+        '403' => '没有该接口的访问权限',
+        '499' => '上游服务响应时间超过接口设置的超时时间',
+        '500' => '代码错误',
+        '501' => '不支持的接口method',
+        '502' => '上游服务返回的数据格式不正确',
+        '503' => '上游服务超时',
+        '504' => '上游服务不可用',
+
+
+二、微信接口
+    1. 用户登录
+    https://apikk.zikang123.com/wechat/login?js_code=xxx
+    返回信息
+    200 正常状态。
+        session_id
+
+
+    2. 用户信息存储
+    https://apikk.zikang123.com/wechat/info?raw_data=xxx&signature=xxx&encrypted_data=xxx&iv=xxx&openid=xxx
+    注意：请求头中带上第1步中的session_id
+    代码参考如下：
+        header: { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'PHPSESSID=' + that.data.session },
+
+    状态码：
+         200： 正常
+         -41001: encodingAesKey 非法
+         -41003: aes 解密失败
+         -41004: 解密后得到的buffer非法
+         -41005: base64加密失败
+         -41016: base64解密失败

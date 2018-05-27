@@ -68,6 +68,36 @@ Page({
     });
   },
   onLoad:function(){
+    var self=this;
+    var obj={
+      url:"https://apikk.zikang123.com/mobile/brand",
+      success:function(res){
+        console.log(res);
+        if (res.data.errno==200) {
+          var data=res.data.datas;
+          var sliders=[];
+          for(var x in data){
+            sliders.push(data[x].name);
+          }
+          self.setData({
+            sliders: sliders
+          })
+        }else{
+          wx.showToast(res.data.info)
+        }
+      }
+    };
+    var obj1={
+      url:"https://apikk.zikang123.com/mobile/series",
+      data:{
+        brand_id:1
+      },
+      success:function(res){
+        console.log("手机型号图文：",res);
+      }
+    }
+    wx.request(obj);
+    wx.request(obj1);
   }
  
 })

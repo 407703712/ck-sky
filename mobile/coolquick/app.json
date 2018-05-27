@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/placeOrder/placeOrder",
-    "pages/selectShop/selectShop",
     "pages/orderMessage/orderMessage",
+    "pages/placeOrder/placeOrder",
+    "pages/phoneModel/phoneModel",
+    "pages/selectShop/selectShop",
     "pages/success/success",
-    "pages/logs/logs",
-    "pages/phoneModel/phoneModel"
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",

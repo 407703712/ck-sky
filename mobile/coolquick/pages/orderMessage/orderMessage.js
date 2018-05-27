@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
    	shopMessage:[
-   	{"name":"门店地址","content":"广东省佛山市最佳十大杰出青年黄飞鸿是也广东省佛山市最佳十大杰出青年黄飞鸿是也"},
+   	{"name":"门店地址","content":"广东省佛山也广东鸿是也"},
    	{"name":"服务时间","content":"10:00-22:22"},
    	{"name":"联系电话","content":"010-249945451"}
    	],
@@ -31,6 +31,14 @@ Page({
   	this.setData({
   		showLayer:false
   	})
+  },
+  goSuccess:function(){
+    wx.navigateTo({
+      url:'../success/success'
+    });
+    wx.setNavigationBarTitle({
+      title: '下单成功'//页面标题为路由参数
+    });
   },
   showLayer:function(){
   	this.setData({

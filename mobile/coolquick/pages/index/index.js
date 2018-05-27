@@ -32,7 +32,8 @@ Page({
     pushgzList:[],//传送给维修方案页面的故障列表数据
     descriptsTxt:"1：大阿斯达阿斯达阿斯达哇所多阿斯达䦺地方水电费；2：何贵何贱同一句话铁公鸡一发过火头发；3：电饭锅热点覆盖人地方电饭锅帝国电饭锅",
     allMoney:0,
-    allItems:{} //所有选中的故障情况汇总
+    allItems:{}, //所有选中的故障情况汇总
+    getInfo:false
   },
   checkboxChange: function(e) {
     var self=this;
@@ -217,8 +218,72 @@ Page({
       return false;
     // console.log("this.data.allMoney",this.data.allMoney);
   },
+  onGotUserInfo:function(e){
+    var self=this;
+    wx.request({  
+        url: 'https://apikk.zikang123.com/wechat/info',  
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'PHPSESSID=' + self.data.sessionId },  
+        data: {  
+          openid: self.data.openId,
+          raw_data: e.detail.rawData,   
+          signature: e.detail.signature,   
+          encrypted_data: e.detail.encryptedData,
+          iv:e.detail.iv,  
+        },  
+        success: resUser => {  
+          if (resUser.data.errno==200) {
+            wx.showToast({
+              title:'授权成功！'
+            })
+            self.setData({
+              getInfo:false
+            })
+          }
+        }  
+    })  
+  },
+  closeLayerInfo:function(){
+    this.setData({
+      getInfo:false
+    })
+  },
   onLoad:function(option){
     var self=this;
+    wx.login({
+      success: function(res) {
+        if (res.code) {
+          //发起网络请求
+          var jsCode=res.code;
+          wx.request({
+            url: 'https://apikk.zikang123.com/wechat/login',
+            data: {
+              js_code: res.code
+            },
+            success:function(res){
+              console.log("login接口返回数据",res);
+              var openId=res.data.datas.openid;
+              var sessionId=res.data.datas.session_id;
+              self.setData({
+                openId:openId,
+                sessionId:sessionId
+              });
+              if(res.data.datas.user_exist){
+                self.setData({
+                  getInfo:false
+                })
+              }else{
+                self.setData({
+                  getInfo:true
+                })
+              } 
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg);
+        }
+      }
+    });
     if (option.modelName) {
       this.setData({
        phoneModel:option.modelName,

@@ -127,6 +127,7 @@
   right: 0;
   background-color: rgba(0,0,0,.4);
   text-align: center;
+  z-index: 99;
 }
 .layer-content{
   background-color: #fff;
@@ -153,4 +154,22 @@
 }
 .layer-list:last-child{
   border:none;
+}
+.date-btn-contain{
+  background:#fff;
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 30rpx;
+  color: #444;
+  text-align: left;
+}
+.btn-sure{
+  float: right;
+  color: #1AAD19;
+}
+.date-contain{
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 30%;
+  width: 90%;
 }

@@ -1,3 +1,4 @@
+
 *{
 	margin: 0;
 	padding: 0;
@@ -21,4 +22,8 @@ q:before,q:after {
 }   
 abbr,acronym { 
 	border:0;   
+}
+.all-contain{
+	max-width: 1550px;
+	margin: 0 auto;
 }   	     

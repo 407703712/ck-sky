@@ -105,7 +105,7 @@ textarea{
 	width: 90%;
 	margin: 0 auto;
 	padding: 26rpx 12rpx;
-	height: 100rpx;
+	height: 150rpx;
 	margin-bottom: 40rpx;
 	font-size: 28rpx;
 }
@@ -114,4 +114,10 @@ textarea{
 	margin: 0 auto;
 	width: 64rpx;
 	margin-top: 40rpx;
+}
+.btn-contain{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }

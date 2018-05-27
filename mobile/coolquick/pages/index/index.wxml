@@ -48,3 +48,10 @@
   </view>
   <image src="../images/close.png" class="close-img" bindtap="closeLayer" mode='widthFix'></image>
  </view>
+ <view class="layer-contain {{getInfo?'show':'hide'}}">
+    <view class="layer-content" style="margin-top: 20%;text-align: center;padding-top: 40rpx;">
+      <view style="font-size: 30rpx; color: #444;margin-bottom: 40rpx;text-align: center;padding: 20rpx 0;">请求获取您的授权！</view>
+       <button type="default" size="mini" bindtap="closeLayerInfo" style="margin-right: 60rpx;">取消</button>
+       <button open-type="getUserInfo" type="primary" size="mini"  bindgetuserinfo="onGotUserInfo">确定</button>
+    </view>
+  </view>

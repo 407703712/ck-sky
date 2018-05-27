@@ -23,7 +23,7 @@
  </view>
  <view class="btn-contain {{orderState===true?'show':'hide'}}">
  	<view class="cancel-btn" bindtap="showLayer">取消订单</view>
- 	<view class="pay-btn">去付款</view>
+ 	<view class="pay-btn" bindtap="goSuccess">去付款</view>
  </view>
  <view class="layer-contain {{showLayer===false?'hide':'show'}}">
  	<view class="layer-content">
