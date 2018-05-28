@@ -5,18 +5,22 @@ const app = getApp()
 Page({
   data: {
     listsData:[
-     {"shopName":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦101室","time":"10:00-19:00","traffic":"地铁7号线华强北站D2出口","phone":"13528456331"},
-     {"shopName":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦102室","time":"10:00-19:00","traffic":"地铁7号线华强北站D3出口","phone":"13528456331"},
-     {"shopName":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦103室","time":"10:00-19:00","traffic":"地铁7号线华强北站D4出口","phone":"13528456331"}
+     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦101室","time":"10:00-19:00","traffic":"地铁7号线华强北站D2出口","phone":"13528456331"},
+     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦102室","time":"10:00-19:00","traffic":"地铁7号线华强北站D3出口","phone":"13528456331"},
+     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦103室","time":"10:00-19:00","traffic":"地铁7号线华强北站D4出口","phone":"13528456331"}
     ]
   },
-  goLineMap:function(){
-  	console.log(11);
+  goLineMap:function(e){
+    var lat=parseInt(e.currentTarget.dataset.lat);
+    var lng=parseInt(e.currentTarget.dataset.lng);
+    var shopname=e.currentTarget.dataset.shopname;
+    var shopaddress=e.currentTarget.dataset.shopaddress;
+  	console.log("lat",lat);
   	wx.openLocation({
-  		latitude:65,
-  		longitude:65,
-  		name:"喜马拉雅山",
-  		address:"印第安纳斯山脉"
+  		latitude:lat,
+  		longitude:lng,
+  		name:shopname,
+  		address:shopaddress
   	})
   },
   callPhone:function(){
@@ -45,6 +49,30 @@ Page({
     })
   },
   onLoad:function(){
+    var self=this;
+    wx.getLocation({
+      type: 'gcj02',
+      success: function(res) {
+        var latitude = res.latitude;
+        var longitude = res.longitude;
+        var speed = res.speed;
+        var accuracy = res.accuracy;
+        var obj={
+          url:"https://apikk.zikang123.com/mobile/shop",
+          data:{
+            lng:longitude,
+            lat:latitude
+          },
+          success:function(res){
+            console.log("门店列表展示数据：",res);
+            self.setData({
+              listsData:res.data.datas
+            })
+          }
+        }
+        wx.request(obj);
+      }
+    })
+    
   }
- 
 })

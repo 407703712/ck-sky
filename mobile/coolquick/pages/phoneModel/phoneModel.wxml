@@ -1,18 +1,22 @@
 <!--phoneModel.wxml-->
 <view class='search-contain' id='searchContain'>
- <image src='../images/search-logo.png' class='search-logo' mode='widthFix'></image>
-  <input  type="text" placeholder='搜索您的设备型号' name='searchModel' id='searchModel' class='search-model'/>
+ <image src='../images/search-logo.png' class="search-logo {{isInput?'pdladd':''}}" mode='widthFix'></image>
+  <view class="s-back {{isInput?'show':'hide'}}" bindtap="hideLayer"></view>
+  <input  type="text" placeholder='搜索您的设备型号' name='searchModel' id='searchModel' class='search-model' bindinput="searchStarting" bindfocus="searchfocus"/>
+  <view class="content-show {{isInput?'show':'hide'}}">
+     <view class="search-item" wx:for="{{searchItems}}">item.name</view>
+  </view>
 </view>
 <view class='model-content-contain'>
   <scroll-view scroll-y class='model-slider-contain'>
-    <view wx:for="{{sliders}}" class='show-item {{index===selectActive?"active":""}}' bindtap='selectBrand' data-id='{{index}}' >
-    {{item}}
+    <view wx:for="{{sliders}}" class='show-item {{index===selectActive?"active":""}}' bindtap='selectBrand' data-id='{{index}}' data-phoneid='{{item.id}}'>
+    {{item.name}}
     </view>
   </scroll-view>
   <view class='model-show-contain'>
     <view class='title'>手机</view>
     <view class='model-show-content'>
-      <view class='model-item' wx:for="{{showLogos}}" bindtap="goIndex" data-message="modelName={{item.name}}&phoneLogo={{item.img}}">
+      <view class='model-item' wx:for="{{showLogos}}" bindtap="goIndex" data-message="modelName={{item.name}}&phoneLogo={{item.img}}&phoneId={{item.id}}">
         <view class='model-item-img-contain'>
           <image src='{{item.img}}' class='model-item-img' mode='widthFix'></image>
         </view>
@@ -20,4 +24,5 @@
       </view>
     </view>
   </view>
+  <view class="layer {{isInput?'show':'hide'}}" bindtap="hideLayer"></view>
 </view>

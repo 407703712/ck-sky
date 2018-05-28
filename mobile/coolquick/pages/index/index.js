@@ -35,33 +35,51 @@ Page({
     allItems:{}, //所有选中的故障情况汇总
     getInfo:false
   },
-  checkboxChange: function(e) {
-    var self=this;
-    var arrs=this.data.items;
-    var lastName=e.detail.value[e.detail.value.length-1];
-    for (var x in arrs) {
-      if (lastName==arrs[x].name) {
-        arrs[x]['checked']=true;
-      }else{
-        arrs[x]['checked']=false;
-      }
-    }
-    self.setData({
-          items:arrs,
-    })
-  },    
+  // checkboxChange: function(e) {
+  //   var self=this;
+  //   var obj={
+
+  //   }
+  //   var arrs=this.data.items;
+  //   var lastName=e.detail.value[e.detail.value.length-1];
+  //   for (var x in arrs) {
+  //     if (lastName==arrs[x].name) {
+  //       arrs[x]['checked']=true;
+  //     }else{
+  //       arrs[x]['checked']=false;
+  //     }
+  //   }
+  //   self.setData({
+  //         items:arrs,
+  //   })
+  // },    
   closeLayer:function(){
     this.setData({
       showLayer:false
     })
   },
-  showLayer:function(e){
+  showLayer:function(e){  //点击部件弹出具体问题框事件
+    var self=this;
     var enter = e.currentTarget.dataset.enter;  //获取自定义的ID值
+    var sfid = e.currentTarget.dataset.sfid;    //获取后台定义的ID值
     this.setData({
       showLayer:true,
       currentEnter:enter,
+      sfid:sfid
     });
-    console.log(this.data.items);
+    var obj={
+      url:"https://apikk.zikang123.com/mobile/problem",
+      data:{
+        series_fitting_id:sfid
+      },
+      success:function(res){
+        console.log("手机部件的具体问题：",res);
+        // self.setData({
+        //   items:res.data.datas
+        // });
+      }
+    };
+    wx.request(obj);
   },  
   goSelect:function(){
     wx.navigateTo({
@@ -100,6 +118,7 @@ Page({
     var currentEnter=this.data.currentEnter; //当前选中元素
     var arr=e.detail.value; //选中的checkbox的集合
     var pushArr=[];
+
     var items=this.data.items;
     var allItems=this.data.allItems;
     for(var x in arr){
@@ -249,6 +268,7 @@ Page({
     })
   },
   onLoad:function(option){
+    console.log("globalData",getApp().globalData.globalDemo);
     var self=this;
     wx.login({
       success: function(res) {
@@ -268,6 +288,7 @@ Page({
                 openId:openId,
                 sessionId:sessionId
               });
+              app.globalData.openId=openId;
               if(res.data.datas.user_exist){
                 self.setData({
                   getInfo:false
@@ -279,7 +300,7 @@ Page({
               } 
             }
           })
-        } else {
+        }else{
           console.log('登录失败！' + res.errMsg);
         }
       }
@@ -287,8 +308,19 @@ Page({
     if (option.modelName) {
       this.setData({
        phoneModel:option.modelName,
-       phoneLogo:option.phoneLogo
+       phoneLogo:option.phoneLogo,
       });
+      var obj={
+        url:"https://apikk.zikang123.com/mobile/fitting",
+        data:option.phoneId,
+        success:function(res){
+          console.log("可选设备故障：",res);
+          // self.setData({
+          //   faultArr:res.data.datas
+          // });
+        }
+      }
+      wx.request(obj);
       return false
     }
     wx.getSystemInfo({

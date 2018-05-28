@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    globalDemo:"我是全局数据"
   }
 })
+//设置全局变量：app.globalData.userInfo=res.data.result;
+//获取全局变量：userInfo:getApp().globalData.userInfo

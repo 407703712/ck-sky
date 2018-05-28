@@ -7,6 +7,8 @@
   display: flex;
   -webkit-display:flex;
   align-items: center;
+  overflow: visible;
+  z-index: 100;
 }
 .search-model{
   font-size: 26rpx;
@@ -14,7 +16,7 @@
   padding: 10rpx;
   padding-left: 80rpx;
   color: #ACACAC;
-  width: 100%;
+  flex-grow:1;
 }
 .search-logo{
   width: 52rpx;
@@ -89,7 +91,8 @@ page {
   width: 88rpx;
   height: 88rpx;
   margin: 0 auto;
-  margin-bottom: 10rpx
+  margin-bottom: 10rpx;
+  vertical-align: middle;
 }
 .model-item-img{
   max-width: 100%;
@@ -98,4 +101,58 @@ page {
 .model-name{
   font-size:26rpx;
   color: #333333;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.content-show{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+  -webkit-transform: translate(-50%,100%);
+  -ms-transform: translate(-50%,100%);
+  -o-transform: translate(-50%,100%);
+  transform: translate(-50%,100%);
+  min-height: 400rpx;
+  z-index: 100;
+  max-height: 60%;
+  overflow-y: auto;
+}
+.layer{
+  position: fixed;
+  background: rgba(0,0,0,.4);
+  z-index: 88;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.s-back{
+  border: 2px solid #ccc;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-top: none;
+  border-right: none;
+  width: 30rpx;
+  height: 30rpx;
+}
+.pdladd{
+  left: 80rpx !important;
+}
+.search-item{
+  padding: 18rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 30rpx;
+  color: #444;
+}
+.search-item:last-child{
+  border-bottom: none;
 }

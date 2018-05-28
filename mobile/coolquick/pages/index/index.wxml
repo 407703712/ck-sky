@@ -22,7 +22,7 @@
 <view class="select-contain">
   <view class="select-title">请选择您设备的故障问题（可多选）：</view>
   <view class="select-btn-contain">
-     <view wx:for="{{faultArr}}" class="fault-item {{index==isEnter[index]?'enter':''}}" bindtap="showLayer" data-enter="{{index}}">
+     <view wx:for="{{faultArr}}" class="fault-item {{index==isEnter[index]?'enter':''}}" bindtap="showLayer" data-enter="{{index}}" data-sfid="{{item.id}}">
        {{item}}
      </view>
   </view>

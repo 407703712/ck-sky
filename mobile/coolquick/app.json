@@ -1,10 +1,10 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/selectShop/selectShop",
+    "pages/phoneModel/phoneModel",
     "pages/orderMessage/orderMessage",
     "pages/placeOrder/placeOrder",
-    "pages/phoneModel/phoneModel",
-    "pages/selectShop/selectShop",
     "pages/success/success",
     "pages/logs/logs"
   ],
