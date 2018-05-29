@@ -2,7 +2,7 @@
 <view class="shop-list-contain">
   <view class="list-item" wx:for="{{listsData}}">
       <view class="item-top" bindtap="goPlaceOrder" data-message="shopAddress={{item.address}}&shopTime={{item.business_begin_time}}-{{item.business_end_time}}&shopPhone={{item.telephone}}" data-shopaddress="{{item.address}}" 
-      data-shoptime="{{item.business_begin_time}}-{{item.business_end_time}}" data-shopphone="{{item.telephone}}" data-shopname="{{item.name}}" data-lat="{{item.lat}}" data-lng="{{item.lng}}">
+      data-shoptime="{{item.business_begin_time}}-{{item.business_end_time}}" data-shopphone="{{item.telephone}}" data-shopname="{{item.name}}" data-lat="{{item.lat}}" data-lng="{{item.lng}}" data-shopid="{{item.id}}">
         <view class="shop-name">{{item.name}}</view>
         <view class="shop-content">门店地址：{{item.address}}</view>
         <view class="shop-content">营业时间：{{item.business_begin_time}}-{{item.business_end_time}}</view>

@@ -33,7 +33,8 @@ Page({
     descriptsTxt:"1：大阿斯达阿斯达阿斯达哇所多阿斯达䦺地方水电费；2：何贵何贱同一句话铁公鸡一发过火头发；3：电饭锅热点覆盖人地方电饭锅帝国电饭锅",
     allMoney:0,
     allItems:{}, //所有选中的故障情况汇总
-    getInfo:false
+    getInfo:false,
+    shopId:''
   },
   // checkboxChange: function(e) {
   //   var self=this;
@@ -314,7 +315,8 @@ Page({
         url:"https://apikk.zikang123.com/mobile/fitting",
         data:option.phoneId,
         success:function(res){
-          console.log("可选设备故障：",res);
+          console.log("手机配置信息：",res);
+          app.globalData.problem=res.data.datas.id;
           // self.setData({
           //   faultArr:res.data.datas
           // });
@@ -330,6 +332,33 @@ Page({
         self.setData({
           phoneModel:phoneModel
         })
+        var obj={
+          url:"https://apikk.zikang123.com/mobile/series_search",
+          data:{
+            series_name:phoneModel
+          },
+          success:function(res){
+            console.log("初始化手机品牌对应信息",res);
+            self.setData({ //初始化手机图片
+              phoneLogo:"https://apikk.zikang123.com"+res.data.datas[0].img
+            })
+            var obj1={
+              url:"https://apikk.zikang123.com/mobile/fitting",
+              data:{
+                series_id:res.data.datas[0].series_id
+              },
+              success:function(res){
+                console.log("初始化手机配置信息",res);
+                app.globalData.problem=res.data.datas.id;
+                self.setData({
+                  faultArr:res.data.datas
+                });
+              }
+            }
+            wx.request(obj1);
+          }
+        }
+        wx.request(obj);
       }
     })
   }

@@ -1,5 +1,6 @@
 page{
 	background-color: #f8f8f8;
+	padding-bottom: 100rpx;
 }
 .list-text-item{
 	border-bottom: 1px solid #eee;

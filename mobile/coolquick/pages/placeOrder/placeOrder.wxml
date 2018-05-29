@@ -14,8 +14,8 @@
     <view class="form-select-contain top-jg-border">
     	<view class="form-list-title">机身颜色</view>
     	<view class="select-btn-contain">
-    		<view class="select-btn {{index==activeIndexC?'active':''}}" wx:for="{{phoneColors}}" data-id="{{index}}" bindtap="selectColors">
-    			{{item}}
+    		<view class="select-btn {{index==activeIndexC?'active':''}}" wx:for="{{phoneColors}}" data-id="{{index}}" bindtap="selectColors" data-colorid="{{item.id}}">
+    			{{item.color}}
     		</view>
     	</view>
     </view>
@@ -46,11 +46,11 @@
     </view>
     <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">名字</view>
-      <input type="text" placeholder="请输入您的名字" name="username" class="list-input" />
+      <input type="text" placeholder="请输入您的名字" name="username" id="username" class="list-input" value="{{realName}}" />
     </view>
     <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">联系方式</view>
-      <input type="text" placeholder="请输入您的联系方式" name="phoneNum" class="list-input" />
+      <input type="text" placeholder="请输入您的联系方式" name="phoneNum" id="phoneNum" class="list-input" value="{{mobile}}"/>
     </view>
     <view class='form-list {{isDaodian?"show":"hide"}}' bindtap="goSelectShop">
       <view class="inline {{isGetShop?'hide':'show'}}">选择门店</view>
@@ -70,11 +70,11 @@
     </view>
     <view class='form-input-list {{isXianchang?"show":"hide"}} {{isXianchang?"show":"hide"}}'>
       <view class="input-text">工程师编号</view>
-      <input type="text" placeholder="请输入工程师编号" name="phoneNum" class="list-input" />
+      <input type="text" placeholder="请输入工程师编号" name="gcsNum" class="list-input" id="gcsNum" />
     </view>
     <view class='form-input-list'>
       <view class="input-text">备注</view>
-      <input type="text" placeholder="请输入您的备注" name="description" class="list-input" />
+      <input type="text" placeholder="请输入您的备注" name="description" class="list-input" value="{{remark}}" id="description" />
     </view>
     <view class="messageBox">
       其他优惠
@@ -100,7 +100,7 @@
   </view>
   <view class="layer {{showLayer?'show':'hide'}}">
     <view class="layer-content">
-      <view style="font-size: 30rpx; color: #444;margin-bottom: 80rpx;">请求获取您的地址权限！</view>
+      <view style="font-size: 30rpx; color: #444;margin-bottom: 80rpx;">请求获取对应权限！</view>
        <button open-type="openSetting" type="primary" size="mini" style="margin-right: 60rpx;" bindtap="hideLayer">确定</button>
        <button type="default" size="mini" bindtap="hideLayer">取消</button>
     </view>

@@ -33,6 +33,7 @@ Page({
     var shopAddress=e.currentTarget.dataset.shopaddress;
     var shopTime=e.currentTarget.dataset.shoptime;
     var shopPhone=e.currentTarget.dataset.shopphone;
+    var shopId=e.currentTarget.dataset.shopid;
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
     var prevPage = pages[pages.length - 2];  //上一个页面
@@ -40,7 +41,8 @@ Page({
         shopAddress:shopAddress,
         shopTime:shopTime,
         shopPhone:shopPhone,
-        isGetShop:true
+        isGetShop:true,
+        shopId:shopId
     })
     // var placeOrderUrl='../placeOrder/placeOrder?'+message;
     console.log(shopAddress);

@@ -1,24 +1,56 @@
 <!--placeOrder.wxml-->
 <view class="list-text-item state-order-contain">
- <view class="list-name" style="width: 60%;">订单状态(到店维修)</view>
+ <view class="list-name" style="width: 60%;">订单状态({{repair_type}})</view>
  <view class="list-content" style="width: 39%;color: #D2B88F">{{orderState===true?"订单已提交":"订单已取消"}}</view>
 </view>
  <view class="message-model">
  	<view class="messageBox">
       店铺信息
     </view>
-    <view class="list-text-item state-order-contain" wx:for="{{shopMessage}}">
-	 <view class="list-name">{{item.name}}</view>
-	 <view class="list-content">{{item.content}}</view>
+    <view class="list-text-item state-order-contain">
+	 <view class="list-name">门店地址</view>
+	 <view class="list-content">{{address}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">服务时间</view>
+	 <view class="list-content">{{business_begin_time}}-{{business_end_time}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">联系电话</view>
+	 <view class="list-content">{{telephone}}</view>
 	</view>
  </view>
 <view class="message-model">
  	<view class="messageBox">
       故障信息
     </view>
-    <view class="list-text-item state-order-contain" wx:for="{{faultMessage}}">
-	 <view class="list-name">{{item.name}}</view>
-	 <view class="list-content">{{item.content}}</view>
+    <view class="list-text-item state-order-contain">
+	 <view class="list-name">手机型号</view>
+	 <view class="list-content">{{brand_name}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">故障问题</view>
+	 <view class="list-content">{{series_name}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">留言</view>
+	 <view class="list-content">{{remark}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">维修价格</view>
+	 <view class="list-content">{{price}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">优惠价格</view>
+	 <view class="list-content"></view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">订单编号</view>
+	 <view class="list-content">{{order_no}}</view>
+	</view>
+	<view class="list-text-item state-order-contain">
+	 <view class="list-name">下单时间</view>
+	 <view class="list-content">{{create_time}}</view>
 	</view>
  </view>
  <view class="btn-contain {{orderState===true?'show':'hide'}}">
@@ -34,7 +66,7 @@
 		  </label>
 		</checkbox-group>
 		<textarea placeholder="其他原因" name="textarea" maxlength="-1"/>
-		<view class="subbtn">提交</view>
+		<view class="subbtn" bindtap="cancleOrder">提交</view>
  	</view>
  	<image src="../images/close.png" class="close-img" bindtap="closeLayer" mode='widthFix'></image>
  </view>
