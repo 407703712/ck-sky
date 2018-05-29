@@ -17,24 +17,26 @@ Page({
     showLayer:false,
     phoneLogo:'../images/home_img_mobile.png',
     phoneModel:"iPhone 7",
-    faultArr:["屏幕故障","升级内存","屏幕故障","升级内存","屏幕故障","升级内存","屏幕故障","升级内存",],
+    faultArr:[],
     notYuyue:true,
     currentEnter:"", //当前点击故障问题按钮
     isEnter:[50,50,50,50,50,50,50,50],//确认选中故障问题的数组
-    items: [
-      {name: 'USA', content: '超出了上门维修的范围',price:"￥99.00",checked:true},
-      {name: 'CHN', content: '下错单了',price:"￥89.00",checked:false},
-      {name: 'BRA', content: '不想到店维修',price:"￥79.00",checked:false},
-      {name: 'JPN', content: '等待时间太久',price:"￥69.00",checked:false},
-      {name: 'ENG', content: '设备已恢复正常',price:"￥59.00",checked:false},
-      {name: 'TUR', content: '不放心取机维修',price:"￥49.00",checked:false},
-    ],
+    // items: [
+    //   {name: 'USA', content: '超出了上门维修的范围',price:"￥99.00",checked:true},
+    //   {name: 'CHN', content: '下错单了',price:"￥89.00",checked:false},
+    //   {name: 'BRA', content: '不想到店维修',price:"￥79.00",checked:false},
+    //   {name: 'JPN', content: '等待时间太久',price:"￥69.00",checked:false},
+    //   {name: 'ENG', content: '设备已恢复正常',price:"￥59.00",checked:false},
+    //   {name: 'TUR', content: '不放心取机维修',price:"￥49.00",checked:false},
+    // ],
+    items:[],
     pushgzList:[],//传送给维修方案页面的故障列表数据
     descriptsTxt:"1：大阿斯达阿斯达阿斯达哇所多阿斯达䦺地方水电费；2：何贵何贱同一句话铁公鸡一发过火头发；3：电饭锅热点覆盖人地方电饭锅帝国电饭锅",
     allMoney:0,
     allItems:{}, //所有选中的故障情况汇总
     getInfo:false,
-    shopId:''
+    shopId:'',
+    isNone:false
   },
   // checkboxChange: function(e) {
   //   var self=this;
@@ -75,9 +77,9 @@ Page({
       },
       success:function(res){
         console.log("手机部件的具体问题：",res);
-        // self.setData({
-        //   items:res.data.datas
-        // });
+        self.setData({
+          items:res.data.datas
+        });
       }
     };
     wx.request(obj);
@@ -179,7 +181,7 @@ Page({
       endEnter[enter]=50;
       for(var x in allItems){
         for(var y in allItems[x]){
-          allMoney+=parseInt(allItems[x][y].price.split("￥")[1]);
+          allMoney+=parseInt(allItems[x][y].price);
           // console.log(allItems[x][y].price.split("￥")[1]);
         }
       }
@@ -217,7 +219,7 @@ Page({
     // console.log("allItems",allItems);
     for(var x in allItems){
       for(var y in allItems[x]){
-        allMoney+=parseInt(allItems[x][y].price.split("￥")[1]);
+        allMoney+=parseInt(allItems[x][y].price);
         // console.log(allItems[x][y].price.split("￥")[1]);
       }
     }
@@ -313,13 +315,20 @@ Page({
       });
       var obj={
         url:"https://apikk.zikang123.com/mobile/fitting",
-        data:option.phoneId,
+        data:{series_id:option.phoneId},
         success:function(res){
           console.log("手机配置信息：",res);
           app.globalData.problem=res.data.datas.id;
-          // self.setData({
-          //   faultArr:res.data.datas
-          // });
+          if (res.data.datas.length==0) {
+            self.setData({
+              faultArr:[{fitting_name:"没有对应故障问题！"}],
+              isNone:true
+            });
+            return false
+          }
+          self.setData({
+            faultArr:res.data.datas
+          });
         }
       }
       wx.request(obj);
@@ -350,6 +359,13 @@ Page({
               success:function(res){
                 console.log("初始化手机配置信息",res);
                 app.globalData.problem=res.data.datas.id;
+                if (res.data.datas.length==0) {
+                  self.setData({
+                    faultArr:[{fitting_name:"没有对应故障问题！"}],
+                    isNone:true
+                  });
+                  return false
+                }
                 self.setData({
                   faultArr:res.data.datas
                 });

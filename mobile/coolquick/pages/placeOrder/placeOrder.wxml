@@ -46,11 +46,11 @@
     </view>
     <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">名字</view>
-      <input type="text" placeholder="请输入您的名字" name="username" id="username" class="list-input" value="{{realName}}" />
+      <input type="text" placeholder="请输入您的名字" name="username" id="username" class="list-input" value="{{realName}}" bindinput="monitorValueName"/>
     </view>
     <view class='form-input-list {{isXianchang||isDaodian?"show":"hide"}}'>
       <view class="input-text">联系方式</view>
-      <input type="text" placeholder="请输入您的联系方式" name="phoneNum" id="phoneNum" class="list-input" value="{{mobile}}"/>
+      <input type="text" placeholder="请输入您的联系方式" name="phoneNum" id="phoneNum" class="list-input" value="{{mobile}}" bindinput="monitorValuePhone"/>
     </view>
     <view class='form-list {{isDaodian?"show":"hide"}}' bindtap="goSelectShop">
       <view class="inline {{isGetShop?'hide':'show'}}">选择门店</view>
@@ -70,11 +70,11 @@
     </view>
     <view class='form-input-list {{isXianchang?"show":"hide"}} {{isXianchang?"show":"hide"}}'>
       <view class="input-text">工程师编号</view>
-      <input type="text" placeholder="请输入工程师编号" name="gcsNum" class="list-input" id="gcsNum" />
+      <input type="text" bindinput="monitorValueEngineer" placeholder="请输入工程师编号" name="gcsNum" class="list-input" id="gcsNum" />
     </view>
     <view class='form-input-list'>
       <view class="input-text">备注</view>
-      <input type="text" placeholder="请输入您的备注" name="description" class="list-input" value="{{remark}}" id="description" />
+      <input type="text" bindinput="monitorValueRemark" placeholder="请输入您的备注" name="description" class="list-input" value="{{remark}}" id="description" />
     </view>
     <view class="messageBox">
       其他优惠

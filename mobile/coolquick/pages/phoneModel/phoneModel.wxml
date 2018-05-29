@@ -4,7 +4,7 @@
   <view class="s-back {{isInput?'show':'hide'}}" bindtap="hideLayer"></view>
   <input  type="text" placeholder='搜索您的设备型号' name='searchModel' id='searchModel' class='search-model' bindinput="searchStarting" bindfocus="searchfocus"/>
   <view class="content-show {{isInput?'show':'hide'}}">
-     <view class="search-item" wx:for="{{searchItems}}">item.name</view>
+     <view class="search-item" wx:for="{{searchItems}}">{{item.name}}</view>
   </view>
 </view>
 <view class='model-content-contain'>
@@ -13,7 +13,7 @@
     {{item.name}}
     </view>
   </scroll-view>
-  <view class='model-show-contain'>
+  <scroll-view class='model-show-contain' scroll-y>
     <view class='title'>手机</view>
     <view class='model-show-content'>
       <view class='model-item' wx:for="{{showLogos}}" bindtap="goIndex" data-message="modelName={{item.name}}&phoneLogo={{item.img}}&phoneId={{item.id}}">
@@ -23,6 +23,6 @@
         <view class='model-name'>{{item.name}}</view>
       </view>
     </view>
-  </view>
+  </scroll-view>
   <view class="layer {{isInput?'show':'hide'}}" bindtap="hideLayer"></view>
 </view>

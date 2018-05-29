@@ -228,6 +228,34 @@ Page({
       hour: this.data.hours[val[1]]
     })
   },
+  //监听手机数据变化
+  monitorValuePhone:function(e){
+    console.log("手机数据",e.detail.value);
+    this.setData({
+      mobile:e.detail.value,
+    })
+  },
+  //监听名字数据变化
+  monitorValueName:function(e){
+    console.log("名字数据",e.detail.value);
+    this.setData({
+      realName:e.detail.value,
+    })
+  },
+  //监听工程师编号数据变化
+  monitorValueEngineer:function(e){
+    console.log("工程师编号",e.detail.value);
+    this.setData({
+      engineerNum:e.detail.value,
+    })
+  },
+  //监听备注数据变化数据变化
+  monitorValueRemark:function(e){
+    console.log("备注数据",e.detail.value);
+    this.setData({
+      remark:e.detail.value
+    })
+  },
   enterDate:function(){
     if(!isChange){
       this.setData({
@@ -239,6 +267,7 @@ Page({
       showDateLayer:false,
       setDate:true
     })
+    isChange=false;
   },
   //提交订单
   goOrderMessage:function(){
@@ -259,10 +288,18 @@ Page({
      real_name=self.data.getname;
      mobile=self.data.getphone;
     }else if(self.data.activeIndexM==1){//到店维修
-      if (!self.data.isGetAdress||self.data.realName==""||self.data.mobile=="") {
+      if (!self.data.isGetShop||self.data.realName==""||self.data.mobile=="") {
         wx.showModal({
           title: '提示',
           content: '请填写您的姓名、电话与所选门店！',
+          showCancel:false
+        })
+        return false;
+      }
+      if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(self.data.mobile))){
+        wx.showModal({
+          title: '提示',
+          content: '请填写正确的手机号码！',
           showCancel:false
         })
         return false;
@@ -281,10 +318,18 @@ Page({
       real_name=self.data.emailgetname;
       mobile=self.data.emailgetphone;
     }else if(self.data.activeIndexM==3){//现场维修
-      if (self.data.emailgetname==""||self.data.emailgetphone==""||self.data.emailgetaddres=="") {
+      if (self.data.realName==""||self.data.mobile==""||self.data.engineerNum=="") {
         wx.showModal({
           title: '提示',
           content: '请填写您的姓名、电话与工程师编号！',
+          showCancel:false
+        })
+        return false;
+      }
+      if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(self.data.mobile))){
+        wx.showModal({
+          title: '提示',
+          content: '请填写正确的手机号码！',
           showCancel:false
         })
         return false;
@@ -312,7 +357,7 @@ Page({
         color:self.data.colorid,
         repair_type:repair_type,
         real_name:real_name,
-        mobile:'13528456331',
+        mobile:'13528456331',//'mobile'
         remark:remark
       },
       success:function(res){
@@ -346,7 +391,7 @@ Page({
       for(var x in allItems){
         for(var y in allItems[x]){
           if(allItems[x][y]){
-            var obj={"name":allItems[x][y].content,"price":allItems[x][y].price}
+            var obj={"name":allItems[x][y].name,"price":allItems[x][y].price}
             gzLists.push(obj);
           }
         }
@@ -366,9 +411,9 @@ Page({
       },
       success:function(res){
         console.log("手机可选颜色数据：",res);
-        // self.setData({
-        //   phoneColors:res.data.datas
-        // })
+        self.setData({
+          phoneColors:res.data.datas
+        })
       }
     };
     wx.request(obj);

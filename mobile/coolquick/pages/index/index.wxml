@@ -22,8 +22,11 @@
 <view class="select-contain">
   <view class="select-title">请选择您设备的故障问题（可多选）：</view>
   <view class="select-btn-contain">
-     <view wx:for="{{faultArr}}" class="fault-item {{index==isEnter[index]?'enter':''}}" bindtap="showLayer" data-enter="{{index}}" data-sfid="{{item.id}}">
+     <view wx:for="{{faultArr}}" class="fault-item {{index==isEnter[index]?'enter':''}} {{isNone?'hide':'show'}}" bindtap="showLayer" data-enter="{{index}}" data-sfid="{{item.id}}">
        {{item.fitting_name}}
+     </view>
+     <view class="{{isNone?'show':'hide'}}" style="padding: 20prx; font-size: 30rpx;">
+       {{faultArr[0].fitting_name}}
      </view>
   </view>
 </view>
@@ -34,12 +37,12 @@
 <view class="layer-contain {{showLayer===false?'hide':'show'}}">
   <view class="layer-content">
     <view class='layer-title'>屏幕故障</view>
-    <checkbox-group bindchange="checkboxChange">
+    <checkbox-group bindchange="checkboxChange" style="min-height: 300rpx;">
       <label class="checkbox" wx:for="{{items}}">
-        <view>
+        <view >
           <checkbox value="{{item.name}}" checked="{{item.checked}}"/>
           <view class="item-price">{{item.price}}</view>
-          {{item.content}}
+          {{item.name}}
         </view>
       </label>
     </checkbox-group>

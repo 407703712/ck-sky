@@ -88,6 +88,7 @@ Page({
     self.setData({
       isInput:true
     });
+    
     var obj={
       url:"https://apikk.zikang123.com/mobile/series_search",
       data:{
@@ -95,7 +96,19 @@ Page({
       },
       success:function(res){
         console.log("手机型号搜索返回数据",res.data.datas)
-        if(res.errno==200){
+        if(res.data.errno==200){
+          if (res.data.datas.length==0) {
+            if (e.detail.value=="") {
+              self.setData({
+                searchItems:[{name:""}]
+              });
+              return false;
+            }
+            self.setData({
+              searchItems:[{name:"没有搜索到相关设备"}]
+            })
+            return false;
+          }
           self.setData({
             searchItems:res.data.datas
           })
