@@ -4,8 +4,14 @@ define(['jquery'],function($){
 			var self=this;
 			self.extendJq();
 		},
-		extendJq:function(){
+		extendJq:function(){ //animate.css插件的回调事件方法
 			$.fn.extend({
+				/**
+		         * [animateCss 设置动画结束回调事件]
+		         * @param  {[type]} animationName [对应的动画类名]
+		         * @param  {[type]} callback [动画结束后的回调函数]
+		         * @return {[type]}     [this]
+		         */
 			  animateCss: function(animationName, callback) {
 			    var animationEnd = (function(el) {
 			      var animations = {
