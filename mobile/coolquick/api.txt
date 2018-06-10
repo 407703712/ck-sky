@@ -1,4 +1,6 @@
-﻿一、业务流程接口
+一、业务流程接口
+    0. 获取banner
+    https://apikk.zikang123.com/mobile/banner
 
     1. 获取手机品牌
     https://apikk.zikang123.com/mobile/brand
@@ -8,11 +10,11 @@
     brand_id 第1个接口返回的 id
 
     3. 搜索手机系列
-    https://apikk.zikang123.com/mobile/series_search?series_name=iPhone X
+    https://apikk.zikang123.com/mobile/series_search?series_name=x
     series_name 需要搜索的名称
 
     4. 手机配件
-    https://apikk.zikang123.com/mobile/fitting?series_id=1
+    https://apikk.zikang123.com/mobile/fitting?series_id=48
     series_id 第2个接口返回的 id
 
     5. 具体问题
@@ -29,9 +31,9 @@
     series_id 第2个接口返回的 id
 
     8. 生成订单
-    https://apikk.zikang123.com/mobile/order?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&problem=1,2,3&shop_id=1&color=1&repair_type=1&real_name=张三&mobile=18500001234&remark=用户留言
+    http://api.kukuai.com/mobile/order?openid=oVgBN5W6PnwS_tPQHkG2mUTBL2ps&problem=160,161&shop_id=1&color=1&repair_type=1&real_name=张三&mobile=18500001234&remark=用户留言
     openid 用户小程序的openid
-    problem 第4个接口返回的id
+    problem 第5个接口返回的id
     shop_id 第6个接口返回的id
     color 第7个接口返回的id
     repair_type 维修方式。1-到店维修 2-上门维修 3-邮寄维修 4-现场维修
@@ -55,7 +57,7 @@
 
     返回信息
     200 正常状态
-      order 中包含： order_no订单编号， shop_id店铺id, price总价， repair_type维修类型, status订单状态
+      order 中包含： order_no订单编号， shop_id店铺id, price总价， repair_type维修类型, status订单状态, create_time下单时间
       extend 中包含：fitting_name设备名称， brand_name手机品牌， series_name手机系列，维修价格。 注释：可能是多维数组。
       user 中包含：real_name用户姓名， mobile手机号码， remark用户备注
       shop 中包含：name店铺名称，address店铺地址，telephone店铺座机号码，intro店铺介绍，business_begin_time营业开始时间，business_end_time营业结束时间，traffic交通线路，door_to_door是否支持上门服务
@@ -85,6 +87,7 @@
     返回信息
     200 正常状态。
         session_id
+        user_exist true=用户已经授权 false=用户未授权
 
 
     2. 用户信息存储

@@ -1,40 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const urlhost=getApp().globalData.urlhost;
 Page({
   data: {
     sliders: ["苹果", "三星", "小米", "华为", "OPPO", "VIVO", "魅族", "索尼爱立信", "苹果", "三星", "小米", "华为", "OPPO", "VIVO", "魅族", "索尼爱立信"],
     slidersHeight:"auto",
     selectActive:0, //当前选中的slider索引值
-    showLogos:[
-      {"img":"../images/img_mobile_5.png","name":"iphone 5"},
-      {"img": "../images/img_mobile_6p.png", "name": "iphone 6p"},
-      {"img": "../images/img_mobile_6s.png", "name": "iphone 6S"},
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      ],
-    initDatas: [
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-      { "img": "../images/img_mobile_5.png", "name": "iphone 5" },
-      { "img": "../images/img_mobile_6p.png", "name": "iphone 6p" },
-      { "img": "../images/img_mobile_6s.png", "name": "iphone 6S" },
-    ],
+    showLogos:[],
+    initDatas: [],
     isInput:false,
     inputback:false,
     searchItems:[]
@@ -64,7 +38,7 @@ Page({
     //   })
     // } 
     var obj={
-      url:"https://apikk.zikang123.com/mobile/series",
+      url:urlhost+"/mobile/series",
       data:{
         brand_id:phoneid
       },
@@ -73,7 +47,7 @@ Page({
         if (res.data.errno==200) {
           var data=res.data.datas;
           for(var x in data){
-            data[x].img="https://apikk.zikang123.com"+data[x].img;
+            data[x].img=urlhost+data[x].img;
           }
           self.setData({
             showLogos:data
@@ -90,7 +64,7 @@ Page({
     });
     
     var obj={
-      url:"https://apikk.zikang123.com/mobile/series_search",
+      url:urlhost+"/mobile/series_search",
       data:{
         series_name:e.detail.value
       },
@@ -148,7 +122,7 @@ Page({
   onLoad:function(){
     var self=this;
     var obj={
-      url:"https://apikk.zikang123.com/mobile/brand",
+      url:urlhost+"/mobile/brand",
       method:'GET',
       header: {  
         'content-type': 'application/json'  
@@ -170,7 +144,7 @@ Page({
       }
     };
     var obj1={
-      url:"https://apikk.zikang123.com/mobile/series",
+      url:urlhost+"/mobile/series",
       data:{
         brand_id:1
       },
@@ -179,7 +153,7 @@ Page({
         if (res.data.errno==200) {
           var data=res.data.datas;
           for(var x in data){
-            data[x].img="https://apikk.zikang123.com"+data[x].img;
+            data[x].img=urlhost+data[x].img;
           }
           self.setData({
             showLogos:data

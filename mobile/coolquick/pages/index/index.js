@@ -1,14 +1,10 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const urlhost=getApp().globalData.urlhost;
 Page({
   data: {
-    imgUrls: [
-      '../images/home_img_banner.png',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    imgUrls: [],//banner图数据
     indicatorDots: true,
     autoplay: false,
     interval: 5000,
@@ -18,7 +14,7 @@ Page({
     phoneLogo:'../images/home_img_mobile.png',
     phoneModel:"iPhone 7",
     faultArr:[],
-    notYuyue:true,
+    notYuyue:true, //是否没有选择故障
     currentEnter:"", //当前点击故障问题按钮
     isEnter:[50,50,50,50,50,50,50,50],//确认选中故障问题的数组
     // items: [
@@ -29,11 +25,10 @@ Page({
     //   {name: 'ENG', content: '设备已恢复正常',price:"￥59.00",checked:false},
     //   {name: 'TUR', content: '不放心取机维修',price:"￥49.00",checked:false},
     // ],
-    items:[],
-    pushgzList:[],//传送给维修方案页面的故障列表数据
+    items:[],//配置问题详情的渲染数据
     descriptsTxt:"1：大阿斯达阿斯达阿斯达哇所多阿斯达䦺地方水电费；2：何贵何贱同一句话铁公鸡一发过火头发；3：电饭锅热点覆盖人地方电饭锅帝国电饭锅",
     allMoney:0,
-    allItems:{}, //所有选中的故障情况汇总
+    allItems:{}, //所有配件选中的配置问题详情汇总
     getInfo:false,
     shopId:'',
     isNone:false
@@ -61,29 +56,6 @@ Page({
       showLayer:false
     })
   },
-  showLayer:function(e){  //点击部件弹出具体问题框事件
-    var self=this;
-    var enter = e.currentTarget.dataset.enter;  //获取自定义的ID值
-    var sfid = e.currentTarget.dataset.sfid;    //获取后台定义的ID值
-    this.setData({
-      showLayer:true,
-      currentEnter:enter,
-      sfid:sfid
-    });
-    var obj={
-      url:"https://apikk.zikang123.com/mobile/problem",
-      data:{
-        series_fitting_id:sfid
-      },
-      success:function(res){
-        console.log("手机部件的具体问题：",res);
-        self.setData({
-          items:res.data.datas
-        });
-      }
-    };
-    wx.request(obj);
-  },  
   goSelect:function(){
     wx.navigateTo({
       url:'../phoneModel/phoneModel'
@@ -113,137 +85,147 @@ Page({
       title: '维修方案'//页面标题为路由参数
     })
   },
-  checkboxChange:function(e){
+  showLayer:function(e){  //点击部件弹出具体问题框事件->1：根据allItems进行问题详情视图渲染
+    var self=this;
+    var enter = e.currentTarget.dataset.enter;  //获取自定义的ID值(当前选中元素标识)
+    var sfid = e.currentTarget.dataset.sfid;    //获取后台定义的ID值
+    var allItems=this.data.allItems;  //所有故障按钮选中的故障项的合集
+    this.setData({
+      showLayer:true,
+      currentEnter:enter,
+      sfid:sfid
+    });
+    var obj={
+      url:urlhost+"/mobile/problem",
+      data:{
+        series_fitting_id:sfid
+      },
+      success:function(res){
+        console.log("手机部件的具体问题：",res);
+        if(allItems[enter]&&allItems[enter].length>0){
+          self.setData({
+            items:allItems[enter]
+          });
+          console.log("详情问题渲染视图的数据：",allItems[enter]);
+        }else{
+          self.setData({
+            items:res.data.datas
+          });
+        }
+      }
+    };
+    wx.request(obj);
+  },  
+  checkboxChange:function(e){ //记录allItems数据变化（不更新视图只更改数据则不用使用setData方法）
     /*
      *目前每个故障按钮下面的选项只给单选，因为多选会造成无法取消选中项的BUG，且单选跟加速度手机一样，后续如果需要多选再对这里进行取消checked判断
      */
-    console.log(e);
+    console.log("CheckBox改变事件对象：",e);
     var currentEnter=this.data.currentEnter; //当前选中元素
     var arr=e.detail.value; //选中的checkbox的集合
-    var pushArr=[];
-
     var items=this.data.items;
-    var allItems=this.data.allItems;
-    for(var x in arr){
-      for(var y in items){
-        if(items[y].name==arr[x]){
-          pushArr.push(items[y]);
-          // items[y].checked=true;
-        }
-      }
-    }
-    allItems[currentEnter]=pushArr;
-    this.setData({
-      pushgzList:pushArr,
-      // items:items
-    });
-    if (!pushArr.length) { //如果没有选中项 则所有checked置为false
-      for(var y in items){
-        items[y].checked=false;
-      }
-      this.setData({
-        pushgzList:pushArr,
-        items:items
-      });
-    }else{ //如果有选中项 则选中项有checked置为true
-      for(var x in arr){
+    var allItems=this.data.allItems; //所有故障按钮选中的故障项的合集
+    var flagArr=[];//当选项大于一个的时候记录被选项的index
+    allItems[currentEnter]=[];
+    if (arr.length==0) {//如果arr长度为0表示没有选中项,则items全部置空
+        flagArr=[];
         for(var y in items){
-          if(items[y].name==arr[x]){
+          items[y].checked=false;
+        }
+    }
+    for(var x in arr){
+      if (arr.length==0) {//如果arr长度为0表示没有选中项,则items全部置空
+        flagArr=[];
+        for(var y in items){
+          items[y].checked=false;
+        }
+      }else if(arr.length==1){
+        flagArr=[];
+        for(var y in items){
+          if(arr[x]==items[y].name){
             items[y].checked=true;
           }else{
             items[y].checked=false;
           }
         }
+      }else if(arr.length>1){
+        for(var y in items){
+          if(arr[x]==items[y].name){
+            items[y].checked=true;
+            flagArr.push(y);
+          }else{
+            items[y].checked=false;
+          }
+        }
       }
-      this.setData({
-        items:items
-      });
-      // console.log("items",items);
     }
+    if(flagArr.length){
+      for(var x in flagArr){
+        items[flagArr[x]].checked=true;
+      }
+    }
+    for(var y in items){
+      allItems[currentEnter].push(items[y]);
+    }
+    console.log("当选项大于1时记录的index值",flagArr);
+    console.log("checkboxChange:items",items);
+    console.log("checkboxChange:allItems",allItems);
   },  
-  selectMb:function(e){
+  selectMb:function(e){ //确定按钮->1：算钱；2：改变按钮状态；3：判断是否有预约问题确定跳转下一个页面的权限；4：记录id为全局变量供后续页面调接口传参
+    var self=this;
     var currentEnter=this.data.currentEnter; //当前选中元素
-    var pushArr=[]; //初始化如果有选中的故障项
     var allItems=this.data.allItems; //所有故障按钮选中的故障项的合集
-    allItems[currentEnter]=[]; //对应故障按钮下面的故障项
-    var allMoney=0; //总维修费用叠加起始值
-    var items=this.data.items;
-      for(var y in items){
-        if(items[y].checked){
-          pushArr.push(items[y]);
-        }
-      }
-    //没有选中故障项
-    var hasEnter=this.data.pushgzList.length; //勾选变化产生的结果
-    if (!hasEnter&&!pushArr.length) {
-      var enter=this.data.currentEnter;
-      var endEnter=this.data.isEnter;
-      endEnter[enter]=50;
-      for(var x in allItems){
-        for(var y in allItems[x]){
-          allMoney+=parseInt(allItems[x][y].price);
-          // console.log(allItems[x][y].price.split("￥")[1]);
-        }
-      }
-      this.setData({
-        isEnter:endEnter,
-        showLayer:false,
-        allMoney:allMoney
-      });
-      if (allMoney>0) {
-        this.setData({
-          notYuyue:false
-        })
-      }else{
-        this.setData({
-          notYuyue:true
-        })
-      }
-      return false;
-    }
-    //有选中故障项
-    var enter=this.data.currentEnter;
-    // console.log(enter);
-    var endEnter=this.data.isEnter;
-    endEnter[enter]=enter;
-    // console.log(endEnter);
-    //计算所选故障项的总和
-    for(var x in items){
-      if(items[x].checked==true){
-        var it=items[x];
-        var numx=parseInt(x);
-        allItems[currentEnter][numx]=it;
-      }
-    }
-    // console.log("items",items);
-    // console.log("allItems",allItems);
+    console.log("selectMb:allItems",allItems);
+    var allMoney=this.data.allMoney; //总维修费用
+    var items=this.data.items; //wxml渲染数据
+    var endEnter=this.data.isEnter; //映射手机配置按钮组选中状态的数组
+    var notYuyue=this.data.notYuyue //是否有选择配置问题
+    var problemId=[];
+    //算钱开始&&记录id为全局变量
+    allMoney=0;//钱数初始化
     for(var x in allItems){
       for(var y in allItems[x]){
-        allMoney+=parseInt(allItems[x][y].price);
-        // console.log(allItems[x][y].price.split("￥")[1]);
+        if(allItems[x][y].checked){ //筛选所有选中项的金钱合集
+          allMoney+=parseInt(allItems[x][y].price);
+          problemId.push(allItems[x][y].id);
+        }
       }
     }
-    this.setData({
+    //改变按钮状态
+    for(var x in allItems[currentEnter]){ 
+      if (allItems[currentEnter][x].checked){//如果当前模块有选中项则改变该按钮的颜色为黄色，否则为默认白色；
+          endEnter[currentEnter]=currentEnter;
+          break;
+      }else{
+          endEnter[currentEnter]=50;
+      }
+    }
+    console.log("配置按钮选中状态数组：",endEnter);
+    //判断是否有预约问题确定跳转下一个页面的权限
+    for(var x in endEnter){
+      if(endEnter[x]!=50){
+        notYuyue=false;
+        break;
+      }else{
+        notYuyue=true;
+      }
+    }
+    self.setData({ //更新视图数据
       isEnter:endEnter,
       showLayer:false,
-      allMoney:allMoney
+      allMoney:allMoney,
+      notYuyue:notYuyue
     });
-    if (allMoney>0) {
-        this.setData({
-          notYuyue:false
-        })
-      }else{
-        this.setData({
-          notYuyue:true
-        })
-      }
-      return false;
+    app.globalData.problemId=problemId.join(',');
+    console.log("problemId:",problemId);
+    console.log("problemIdStr:",app.globalData.problemId);
+    return false;
     // console.log("this.data.allMoney",this.data.allMoney);
   },
   onGotUserInfo:function(e){
     var self=this;
     wx.request({  
-        url: 'https://apikk.zikang123.com/wechat/info',  
+        url: urlhost+'/wechat/info',  
         method: 'POST',
         header: { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'PHPSESSID=' + self.data.sessionId },  
         data: {  
@@ -272,7 +254,20 @@ Page({
   },
   onLoad:function(option){
     console.log("globalData",getApp().globalData.globalDemo);
+    var pages = getCurrentPages() //获取加载的页面
+var currentPage = pages[pages.length-1] //获取当前页面的对象
     var self=this;
+    var bannerobj={ //banner图接口
+      url:urlhost+"/mobile/banner",
+      success:function(res){
+        self.setData({
+          imgUrls:res.data.datas
+        })
+        console.log("res.data.datas",res.data.datas);
+        console.log("currentPage.route",currentPage.route);
+      }
+    };
+    wx.request(bannerobj);
     wx.login({
       success: function(res) {
         if (res.code) {
@@ -314,7 +309,7 @@ Page({
        phoneLogo:option.phoneLogo,
       });
       var obj={
-        url:"https://apikk.zikang123.com/mobile/fitting",
+        url:urlhost+"/mobile/fitting",
         data:{series_id:option.phoneId},
         success:function(res){
           console.log("手机配置信息：",res);
@@ -342,17 +337,17 @@ Page({
           phoneModel:phoneModel
         })
         var obj={
-          url:"https://apikk.zikang123.com/mobile/series_search",
+          url:urlhost+"/mobile/series_search",
           data:{
             series_name:phoneModel
           },
           success:function(res){
             console.log("初始化手机品牌对应信息",res);
             self.setData({ //初始化手机图片
-              phoneLogo:"https://apikk.zikang123.com"+res.data.datas[0].img
+              phoneLogo:urlhost+res.data.datas[0].img
             })
             var obj1={
-              url:"https://apikk.zikang123.com/mobile/fitting",
+              url:urlhost+"/mobile/fitting",
               data:{
                 series_id:res.data.datas[0].series_id
               },
@@ -376,6 +371,7 @@ Page({
         }
         wx.request(obj);
       }
-    })
+    });
+
   }
 })

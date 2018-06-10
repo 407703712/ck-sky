@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const urlhost=getApp().globalData.urlhost;
 Page({
   data: {
    	shopMessage:[
@@ -50,7 +50,7 @@ Page({
     var self=this;
     var openId=getApp().globalData.openId;
     var obj={
-      url:"https://apikk.zikang123.com/mobile/chargeback",
+      url:urlhost+"/mobile/chargeback",
       data:{
         openid:openId,
         order_no:this.data.order_no,
@@ -76,7 +76,7 @@ Page({
     var order_no=option.order_no;
     var openId=getApp().globalData.openId;
     var obj={
-      url:"https://apikk.zikang123.com/mobile/order_detail",
+      url:urlhost+"/mobile/order_detail",
       data:{
         openid:openId,
         order_no:order_no

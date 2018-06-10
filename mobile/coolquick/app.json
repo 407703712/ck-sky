@@ -5,8 +5,7 @@
     "pages/selectShop/selectShop",
     "pages/phoneModel/phoneModel",
     "pages/orderMessage/orderMessage",
-    "pages/success/success",
-    "pages/logs/logs"
+    "pages/success/success"
   ],
   "window":{
     "backgroundTextStyle":"light",

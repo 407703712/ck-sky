@@ -35,7 +35,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    globalDemo:"我是全局数据"
+    globalDemo:"我是全局数据",
+    urlhost:'https://apikk.zikang123.com'
   }
 })
 //设置全局变量：app.globalData.userInfo=res.data.result;

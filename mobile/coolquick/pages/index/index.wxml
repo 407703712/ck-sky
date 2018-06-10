@@ -3,7 +3,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image src="https://apikk.zikang123.com{{item.img}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>

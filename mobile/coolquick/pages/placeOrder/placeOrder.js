@@ -11,6 +11,7 @@ const afDay=new Date(afterOneMTamp).getDate();//30天后的天
 const cuMon=new Date().getMonth()+1;  //当前月
 const cuDay=new Date().getDate(); //当前天
 const cuYear=new Date().getFullYear(); //当前年
+const urlhost=getApp().globalData.urlhost;
 let isChange=false;//时间选择器是否变化
 const maxDayFun=(cuYear,cuMon)=>{
   return new Date(cuYear, cuMon, 0).getDate();
@@ -128,7 +129,7 @@ Page({
     wx.getSetting({
       success: (res) => {
         console.log("获取权限返回",res);
-         if (res.authSetting['scope.address']||res.authSetting['scope.userLocation']) {
+         // if (res.authSetting['scope.address']||res.authSetting['scope.userLocation']) {
             wx.chooseAddress({
               success:function(res){
                 var name=res.userName;
@@ -155,21 +156,13 @@ Page({
                     isGetAdress:false,
                     isGetEmail:false
                   });
-                
-                // if (res.errMsg=="chooseAddress:fail cancel") {
-                //   console.log(res);
-                // }else{
-                //   wx.showToast({
-                //     title:res.errMsg
-                //   })
-                // }
               }
             })
-         }else{
-            self.setData({
-              showLayer:true
-            })
-         }
+         // }else{
+         //    self.setData({
+         //      showLayer:true
+         //    })
+         // }
       }
     })
   },
@@ -349,10 +342,10 @@ Page({
     var phoneColors=self.data.phoneColors;
     var remark=self.data.remark;
     var obj={
-      url:"https://apikk.zikang123.com/mobile/order",
+      url:urlhost+"/mobile/order",
       data:{
         openid:getApp().globalData.openId,
-        problem:getApp().globalData.problem||1,
+        problem:getApp().globalData.problemId||1,
         shop_id:self.data.shopId||1,
         color:self.data.colorid,
         repair_type:repair_type,
@@ -405,7 +398,7 @@ Page({
     }
     //手机可选颜色初始化
     var obj={
-      url:"https://apikk.zikang123.com/mobile/color",
+      url:urlhost+"/mobile/color",
       data:{
         series_id:1
       },

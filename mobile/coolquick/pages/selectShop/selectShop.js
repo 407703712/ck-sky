@@ -1,14 +1,10 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const urlhost=getApp().globalData.urlhost;
 Page({
   data: {
-    listsData:[
-     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦101室","time":"10:00-19:00","traffic":"地铁7号线华强北站D2出口","phone":"13528456331"},
-     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦102室","time":"10:00-19:00","traffic":"地铁7号线华强北站D3出口","phone":"13528456331"},
-     {"name":"深圳直营店","address":"广东省深圳市福田华强北山寨基地帝国大厦103室","time":"10:00-19:00","traffic":"地铁7号线华强北站D4出口","phone":"13528456331"}
-    ]
+    listsData:[]
   },
   goLineMap:function(e){
     var lat=parseInt(e.currentTarget.dataset.lat);
@@ -60,7 +56,7 @@ Page({
         var speed = res.speed;
         var accuracy = res.accuracy;
         var obj={
-          url:"https://apikk.zikang123.com/mobile/shop",
+          url:urlhost+"/mobile/shop",
           data:{
             lng:longitude,
             lat:latitude
