@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="subnav row">
+  <view class="col-3 text-center"><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view class="f17">签到</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view class="f17">笔记</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view class="f17">作业</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-5.png" alt="" mode='widthFix'/><view class="f17">考试</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view class="f17">课件</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view class="f17">点评</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view class="f17">问卷</view></view>
+</view>
+<view class="ht-c"></view>
+<view class="class-content">
+  <view class="title">课程介绍</view>
+  <view class="content">
+     所属专题执行力、赢在执行培训、从技术走向管理培训、高效执行力、高效执行力与团队合作、工厂... ...
+  </view>
+</view>

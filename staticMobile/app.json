@@ -1,5 +1,9 @@
 {
   "pages":[
+    "pages/me/me",
+    "pages/course/course",
+    "pages/class/class",
+    "pages/find/find",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -12,7 +16,8 @@
    "tabBar": {
       "color": "#B9B9B9",
       "selectedColor": "#4897DD",
-      "borderStyle":"white",
+      "borderStyle":"#eee",
+      "backgroundColor":"white",
       "list": [{
         "selectedIconPath": "pages/images/home-active.png",
         "iconPath": "pages/images/home.png",
@@ -21,22 +26,22 @@
       }, {
         "selectedIconPath": "pages/images/find-active.png",
         "iconPath": "pages/images/find.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/find/find",
         "text": "发现"
       }, {
         "selectedIconPath": "pages/images/class-active.png",
         "iconPath": "pages/images/class.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/class/class",
         "text": "班级"
       }, {
         "selectedIconPath": "pages/images/course-active.png",
         "iconPath": "pages/images/course.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/course/course",
         "text": "课程"
       }, {
         "selectedIconPath": "pages/images/me-active.png",
         "iconPath": "pages/images/me.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/me/me",
         "text": "我的"
       }]
     }

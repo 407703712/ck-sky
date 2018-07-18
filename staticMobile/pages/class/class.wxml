@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="subnav row">
+  <view class="col-3 text-center"><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view class="f17">成员</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view class="f17">讨论组</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view class="f17">作业</view></view>
+  <view class="col-3 text-center"><image src="../images/about-icon-5.png" alt="" mode='widthFix'/><view class="f17">考试</view></view>
+</view>
+<view class="ht-c"></view>
+<view class="class-content">
+  <view class="title">班级动态</view>
+  <view class="content" wx:for="{{listDatas}}">
+     <view  class="content-item d-flex">
+        <view class="img-c">
+          <image src="{{item.img}}" alt="" mode='widthFix'/>
+        </view>
+        <view class="text-c">
+          <view class="f17 fb mb-2">{{item.title}}</view>
+          <view class="f17 c-b mb-2">{{item.content}}</view>
+          <view class="c-d f13 time">{{item.time}}</view>
+        </view>
+     </view>
+  </view>
+  <view class="loadmore c-b">加载更多</view>
+</view>

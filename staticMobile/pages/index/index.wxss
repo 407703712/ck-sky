@@ -1,6 +1,7 @@
 /**index.wxss**/
 swiper-item image{
 	width: 100%;
+	height:100%;
 }
 view{
 	font-size: 30rpx;
@@ -33,27 +34,13 @@ view{
 	vertical-align: middle;
 	margin-right: 20rpx;
 }
-.bd-c{
-	height: 20rpx;
-	background-color: #F4F4F4;
+.mb-2{
+	margin-bottom: 20rpx;
 }
-.justify-content-between {
-  -webkit-box-pack: justify !important;
-  -ms-flex-pack: justify !important;
-  justify-content: space-between !important;
-}
-.justify-content-around {
-  -ms-flex-pack: distribute !important;
-  justify-content: space-around !important;
-}
-
-.d-flex {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-.subnav{
-  padding:10rpx 0;
+.img-c{
+  height:100%;
+  width:30%;
+  margin-right:10rpx;
 }
 .class-content{
 }
@@ -63,7 +50,19 @@ view{
 	position: relative;
 	padding: 16rpx 0;
 	padding-left: 40rpx;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
+}
+.f17{
+	font-size: 34rpx;
+}
+.f13{
+	font-size: 26rpx;
+}
+.c-b{
+	color: #BBBBBB;
+}
+.c-d{
+	color: #D1D1D1
 }
 .title:before{
 	position: absolute;
@@ -84,5 +83,15 @@ view{
 }
 .content-item{
 	padding: 20rpx 0;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #eee;
+}
+.subnav{
+	text-align:center;
+	padding:20rpx 0;
+}
+.subnav image{
+	width:80rpx;
+}
+.content image{
+	width:200rpx;
 }

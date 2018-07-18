@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="class-content">
+  <view class="content" wx:for="{{listDatas}}">
+     <view  class="content-item d-flex">
+        <view class="img-c">
+          <image src="{{item.img}}" alt="" mode='widthFix'/>
+        </view>
+        <view class="text-c">
+          <view class="f17 fb mb-2">{{item.title}}</view>
+          <view class="f17 c-b mb-2">{{item.content}}</view>
+          <view class="c-d f13">学习人数：{{item.studynum}}</view>
+        </view>
+     </view>
+  </view>
+  <view class="loadmore c-b">加载更多</view>
+</view>

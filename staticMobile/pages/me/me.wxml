@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="ht-c"></view>
+<view class="list-content">
+   <view class="list-item d-flex justify-content-between align-items-center">
+     <view class="d-flex">
+       <image src="../images/yuyue.png" alt="" mode='widthFix'/>
+       <view>我的预约</view>
+     </view>
+     <view class="rjt"></view>
+   </view>
+   <view class="list-item d-flex justify-content-between align-items-center">
+     <view class="d-flex">
+       <image src="../images/pinlun.png" alt="" mode='widthFix'/>
+       <view>我的评论</view>
+     </view>  
+     <view class="rjt"></view>
+   </view>
+   <view class="list-item d-flex justify-content-between align-items-center">
+    <view class="d-flex">
+     <image src="../images/ziliao.png" alt="" mode='widthFix'/>
+     <view>我的资料</view>
+    </view> 
+     <view class="rjt"></view>
+   </view>
+   <view class="ht-c"></view>
+   <view class="list-item d-flex justify-content-between align-items-center">
+    <view class="d-flex">
+     <image src="../images/fankui.png" alt="" mode='widthFix'/>
+     <view>建议反馈</view>
+    </view> 
+     <view class="rjt"></view>
+   </view>
+</view>

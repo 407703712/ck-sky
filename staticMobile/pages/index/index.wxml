@@ -10,20 +10,47 @@
   <image src="../images/message.png" alt="" mode='widthFix'/>
   <text>消息公告：公告公告公告</text>
 </view>
-<view class="bd-c"></view>
+<view class="ht-c"></view>
 <view class="subnav d-flex justify-content-around">
-  <view><view>调研</view></view>
-  <view><view>调研</view></view>
-  <view><view>调研</view></view>
-  <view><view>调研</view></view>
-  <view><view>调研</view></view>
+  <view><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view>调研</view></view>
+  <view><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view>调研</view></view>
+  <view><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view>调研</view></view>
+  <view><image src="../images/about-icon-5.png" alt="" mode='widthFix'/><view>调研</view></view>
+  <view><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view>调研</view></view>
 </view>
-<view class="bd-c"></view>
+<view class="ht-c"></view>
 <view class="class-content">
   <view class="title">热门课程</view>
   <view class="content">
-     <view class="content-item">
-        <view class="img-c"></view>
+     <view class="content-item d-flex">
+        <view class="img-c">
+          <image src="../images/img19.jpg" alt="" mode='widthFix'/>
+        </view>
+        <view class="text-c">
+          <view class="f17 fb mb-2">课程标题</view>
+          <view class="f17 c-b mb-2">课程简介课程简介课程简介课程简介课程简介。</view>
+          <view class="c-d f13">学习人数：4553</view>
+        </view>
+     </view>
+     <view class="content-item d-flex">
+        <view class="img-c">
+          <image src="../images/img19.jpg" alt="" mode='widthFix'/>
+        </view>
+        <view class="text-c">
+          <view class="f17 fb mb-2">课程标题</view>
+          <view class="f17 c-b mb-2">课程简介课程简介课程简介课程简介课程简介。</view>
+          <view class="c-d f13">学习人数：4553</view>
+        </view>
+     </view>
+     <view class="content-item d-flex">
+        <view class="img-c">
+          <image src="../images/img19.jpg" alt="" mode='widthFix'/>
+        </view>
+        <view class="text-c">
+          <view class="f17 fb mb-2">课程标题</view>
+          <view class="f17 c-b mb-2">课程简介课程简介课程简介课程简介课程简介。</view>
+          <view class="c-d f13">学习人数：4553</view>
+        </view>
      </view>
   </view>
 </view>
