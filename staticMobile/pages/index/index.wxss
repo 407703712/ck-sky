@@ -1,0 +1,88 @@
+/**index.wxss**/
+swiper-item image{
+	width: 100%;
+}
+view{
+	font-size: 30rpx;
+}
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+.swiper-box .wx-swiper-dot{
+    width:40rpx;
+    display: inline-flex;
+    height: 10rpx;
+    margin-left: 20rpx;
+    justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: #C4C4C4;
+    border-radius: 8rpx
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:#1B7ED5;   
+}
+.message-c{
+	font-size: 30rpx;
+	padding: 20rpx;
+}
+.message-c image{
+	width: 50rpx;
+	vertical-align: middle;
+	margin-right: 20rpx;
+}
+.bd-c{
+	height: 20rpx;
+	background-color: #F4F4F4;
+}
+.justify-content-between {
+  -webkit-box-pack: justify !important;
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+.justify-content-around {
+  -ms-flex-pack: distribute !important;
+  justify-content: space-around !important;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.subnav{
+  padding:10rpx 0;
+}
+.class-content{
+}
+.title{
+	font-size: 34rpx;
+	font-weight: bold;
+	position: relative;
+	padding: 16rpx 0;
+	padding-left: 40rpx;
+	border-bottom: 1px solid #ddd;
+}
+.title:before{
+	position: absolute;
+	content: "";
+	width: 6rpx;
+	height: 30rpx;
+	top: 52%;
+	left: 20rpx;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+	background-color: #1B7ED5;
+	
+}
+.content{
+	padding-left: 20rpx;
+}
+.content-item{
+	padding: 20rpx 0;
+	border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}">
+  <block wx:for="{{swiperItems}}">
+    <swiper-item>
+      <image src="{{item.img}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="message-c">
+  <image src="../images/message.png" alt="" mode='widthFix'/>
+  <text>消息公告：公告公告公告</text>
+</view>
+<view class="bd-c"></view>
+<view class="subnav d-flex justify-content-around">
+  <view><view>调研</view></view>
+  <view><view>调研</view></view>
+  <view><view>调研</view></view>
+  <view><view>调研</view></view>
+  <view><view>调研</view></view>
+</view>
+<view class="bd-c"></view>
+<view class="class-content">
+  <view class="title">热门课程</view>
+  <view class="content">
+     <view class="content-item">
+        <view class="img-c"></view>
+     </view>
+  </view>
+</view>

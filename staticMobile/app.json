@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2591FE",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"white"
+  },
+   "tabBar": {
+      "color": "#B9B9B9",
+      "selectedColor": "#4897DD",
+      "borderStyle":"white",
+      "list": [{
+        "selectedIconPath": "pages/images/home-active.png",
+        "iconPath": "pages/images/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      }, {
+        "selectedIconPath": "pages/images/find-active.png",
+        "iconPath": "pages/images/find.png",
+        "pagePath": "pages/logs/logs",
+        "text": "发现"
+      }, {
+        "selectedIconPath": "pages/images/class-active.png",
+        "iconPath": "pages/images/class.png",
+        "pagePath": "pages/logs/logs",
+        "text": "班级"
+      }, {
+        "selectedIconPath": "pages/images/course-active.png",
+        "iconPath": "pages/images/course.png",
+        "pagePath": "pages/logs/logs",
+        "text": "课程"
+      }, {
+        "selectedIconPath": "pages/images/me-active.png",
+        "iconPath": "pages/images/me.png",
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }]
+    }
+}
