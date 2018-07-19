@@ -14,6 +14,6 @@ Page({
     swiperItems:[{'img':'../images/banner1.png'},{'img':'../images/banner1.png'},{'img':'../images/banner1.png'}]
   },
   onLoad: function () {
-
+    wx.setNavigationBarTitle({ title: '首页' })
   }
 })

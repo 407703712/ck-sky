@@ -16,6 +16,6 @@ Page({
     ]
   },
   onLoad: function () {
-    wx.setNavigationBarTitle({ title: '班级' })
+    wx.setNavigationBarTitle({ title: '项目详情' })
   }
 })

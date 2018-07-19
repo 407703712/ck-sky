@@ -1,0 +1,120 @@
+/**index.wxss**/
+swiper-item image{
+	width: 100%;
+}
+view{
+	font-size: 30rpx;
+}
+.bd-c{
+	height: 20rpx;
+	background-color: #F4F4F4;
+}
+.f17{
+	font-size: 34rpx;
+}
+.f13{
+	font-size: 26rpx;
+}
+.c-b{
+	color: #7E7E7E;
+}
+.c-d{
+	color: #D1D1D1
+}
+.content{
+	padding-left: 20rpx;
+}
+.content-item{
+	position:relative;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #eee;
+}
+.loadmore{
+	position: relative;
+	margin: 0 auto;
+	width: 180rpx;
+	text-align: center;
+	padding: 20rpx 0;
+}
+.img-c{
+  height:100%;
+  width:160rpx;
+  
+}
+.mb-2{
+	margin-bottom: 20rpx;
+}
+.mb-16{
+	margin-bottom: 16rpx;
+}
+.content image{
+	width: 120rpx;
+	margin-right:10rpx;
+}
+.time{
+	position:absolute;
+	right:20rpx;
+	top:20rpx;
+}
+.banner-img-c image{
+	width:100%;
+}
+.title{
+	font-size: 34rpx;
+	font-weight: bold;
+	position: relative;
+	padding: 16rpx 0;
+	padding-left: 20rpx;
+	border-bottom: 1px solid #eee;
+}
+.title:before{
+	position: absolute;
+	content: "";
+	width: 6rpx;
+	height: 30rpx;
+	top: 52%;
+	left: 0;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+	background-color: #1B7ED5;
+	
+}
+.ht-c{
+	height:40rpx;
+}
+.top-introduce{
+	padding: 20rpx;
+}
+.studynum{
+	margin:0 30rpx;
+}
+.public-class{
+	border-radius: 50rpx;
+	padding: 10rpx 28rpx;
+	border:1px solid #85CBC8;
+	color: #6595FF;
+}
+.studyimg{
+	width: 36rpx;
+	margin-right: 8rpx;
+	vertical-align: bottom;
+}
+.teacher-introduce,.class-introduce{
+	padding: 20rpx;
+}
+.sign-button{
+	width: 90%;
+	margin: 0 auto;
+	background-color: #1B7DD5;
+	color: white;
+	padding: 18rpx 0;
+	border-radius: 12rpx;
+	margin-top: 30rpx;
+	text-align: center;
+	font-size: 40rpx;
+}
+.pb-40{
+	padding-bottom: 40rpx;
+}

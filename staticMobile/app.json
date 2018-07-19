@@ -1,11 +1,19 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/medtail/medtail",
+    "pages/headhuntdetail/headhuntdetail",
+    "pages/headhuntsign/headhuntsign",
+    "pages/headhuntindex/headhuntindex",
+    "pages/partsign/partsign",
+    "pages/partdetail/partdetail",
+    "pages/partindex/partindex",
+    "pages/coursesign/coursesign",
+    "pages/coursedetail/coursedetail",
     "pages/me/me",
     "pages/course/course",
     "pages/class/class",
-    "pages/find/find",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/find/find"
   ],
   "window":{
     "backgroundTextStyle":"light",

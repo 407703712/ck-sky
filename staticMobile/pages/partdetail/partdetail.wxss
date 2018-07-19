@@ -1,0 +1,40 @@
+/**index.wxss**/
+swiper-item image{
+	width: 100%;
+}
+view{
+	font-size: 30rpx;
+}
+.c-red{
+	color: #F4A8AB;
+}
+.c-blue{
+	color: #5599DD;
+}
+.f13{
+	font-size: 26rpx;
+}
+.c-blue{
+	color: #1B7DD5 !important;
+}
+.bg-green{
+	background-color: #7ED1A1 !important;
+}
+.detail-title{
+	padding: 40rpx 20rpx;
+	border-bottom: 1px solid #ccc;
+}
+.top-text{
+	padding: 40rpx 20rpx;
+}
+.top-text view{
+	color: #ABABAB;
+	margin-bottom: 10rpx;
+}
+.content{
+	padding: 20rpx;
+	font-size: 14rpx;
+}
+page{
+	padding-bottom: 40rpx;
+}

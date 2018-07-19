@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="top-introduce">
+  <view class="f17 fb mb-16">管理者成长地图：绩效执行与制度落地</view>
+  <view class="c-b mb-2">所属专题执行力、赢在执行培训、从技术走向管理培训、高效执行力、高效执行力与团队合作、工厂... ...</view>
+   <view class="d-flex align-items-center">
+     <view class="public-class">公共课</view>
+     <view class="studynum f13 c-b"><image class="studyimg" src="../images/studynum.png" alt="" mode='widthFix'/>187/200</view>
+     <view class="f13 c-b"><image class="studyimg" src="../images/studytime.png" alt="" mode='widthFix'/>05-09 12:00-16:30</view>
+   </view> 
+</view>
+<view class="ht-c"></view>
+<view class="teacher-introduce">
+  <view class="f17 fb mb-16">讲师：吴晓波</view>
+  <view class="c-b">讲师介绍讲师介绍讲师介绍讲介绍培训、高效执行力、高效执行力与团队合作、工厂... ...</view>
+</view>
+<view class="ht-c"></view>
+<view class="class-introduce pb-40">
+  <view class="f17 fb mb-16 title">课程介绍</view>
+  <view>所属专题执行力、赢在执行培训、从技术走向管理培训、高效执行力与团队合作、工厂... ...</view>
+  <view class="sign-button">预约报名</view>
+</view>

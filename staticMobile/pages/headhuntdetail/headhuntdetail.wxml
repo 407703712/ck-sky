@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="d-flex justify-content-between p-pub ptb-40 align-items-center bb-c">
+  <view class="fb f17">事业部项目总监</view>
+  <view class="f13 c-red">12000-210000</view>
+</view>
+<view class="p-pub c-b ptb-40">
+  <view class="d-flex justify-content-between">
+    <view class="f14 ">工作地点：上海</view>
+    <view class="f14 ">工作经验：5年</view>
+    <view class="f14 ">学历要求：大专</view>
+  </view>
+  <view>其他要求：如果你不能简洁的说明他，那说明你还不够了解他</view>
+</view>
+<view>
+  <view class="title">职位描述</view>
+  <view class="p-pub d-flex align-items-start">
+    <text>
+      {{textDemo}}
+    </text>
+  </view>
+  <view class="sign-button bg-red">我要推荐</view>
+</view>

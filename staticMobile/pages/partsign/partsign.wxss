@@ -1,0 +1,43 @@
+/**index.wxss**/
+swiper-item image{
+	width: 100%;
+}
+view{
+	font-size: 30rpx;
+}
+.ptb-60{
+	padding-top: 60rpx;
+	padding-bottom: 60rpx;
+}
+.form-item{
+	border-bottom: 1px solid #eee;
+	padding-left: 20rpx;
+}
+.p-2{
+	padding: 20rpx 0;
+}
+.label{
+	width: 30%;
+}
+.c-blue{
+	color: #4191F2;
+}
+.linh-1{
+	line-height: 1;
+	padding: 26rpx 0;
+}
+textarea{
+	height: 200rpx;
+	background-color: #fff;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+	padding: 20rpx;
+	box-shadow: none;	
+	border: 1px solid #ccc;
+	margin-top: 40rpx;
+	border-radius: 10rpx;
+	box-sizing: border-box;
+	font-size: 30rpx;
+	margin-bottom: 60rpx;
+}

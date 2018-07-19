@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view>
+  <view class="detail-title d-flex justify-content-between align-items-center">
+    <view class="fb f17">某某大型项目</view>
+    <view class="f13 c-red">￥2000000</view>
+  </view>
+  <view class="top-text">
+    <view class="d-flex">项目状态：<view class="c-blue">招聘中</view></view>
+    <view>工作地点：不限</view>
+    <view>需求人数：3人</view>
+    <view>项目工期：120天</view>
+  </view>
+</view>
+<view class="ht-c"></view>
+<view class="yaoqiu-contain">
+  <view class="title">兼职要求</view>
+  <view class="content">
+    <view>1、销售任务完成的直接责任人，总体负责客户关系的建立工作。</view>
+    <view>2、负责提出项目立项,制定并实施完整的销售方案，完成项目的投标，签约；</view>
+  </view>
+</view>
+<view class="ht-c"></view>
+<view class="yaoqiu-contain">
+  <view class="title">项目描述</view>
+  <view class="content">
+    <view>1、销售任务完成的直接责任人，总体负责客户关系的建立工作。</view>
+    <view>2、负责提出项目立项,制定并实施完整的销售方案，完成项目的投标，签约；</view>
+    <view>3、销售任务完成的直接责任人，总体负责客户关系的建立工作。</view>
+    <view>4、销售任务完成的直接责任人，总体负责客户关系的建立工作。</view>
+  </view>
+</view>
+<view class="sign-button bg-green">我要兼职</view>

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="p-pub pb-60">
+  <view class="fb f17 text-center mb-60">推荐流程</view>
+  <view class="d-flex justify-content-center">
+    <view class="btn active">发送简历</view>
+    <view class="btn">简历审核</view>
+    <view class="btn">联系面试</view>
+    <view class="btn">安排上岗</view>
+    <view class="btn">完成</view>
+  </view>
+</view>
+<view class="ht-c"></view>
+<view class="p-pub">
+  请将简历发送至邮箱：info@qq.com,稍后我们的工作人员会对简历进行审核，审核过后我们会与您取得联系。
+</view>
+<view class="ht-c"></view>
+<view class="p-pub pb-60">
+  <view class="mb-30">电话：0756-9883746 9866569</view>
+  <view >联系人：李小姐</view>
+</view>

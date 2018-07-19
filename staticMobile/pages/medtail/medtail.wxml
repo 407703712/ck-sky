@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<form class="form-contain">
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">您的姓名</view>
+    <input class="p-2" type="text" placeholder="请输入您的姓名" />
+  </view>
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">您的性别</view>
+    <input class="p-2" type="text" placeholder="请输入您的性别" />
+  </view>
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">您的生日</view>
+    <input class="p-2" type="text" placeholder="请输入您的生日" />
+  </view>
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">您的学历</view>
+    <input class="p-2" type="text" placeholder="请输入您的学历" />
+  </view>
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">您的职位</view>
+    <input class="p-2" type="text" placeholder="请输入您的职位" />
+  </view>
+  <view class="form-item d-flex align-items-center">
+    <view class="label p-2">所在地区</view>
+    <input class="p-2" type="text" placeholder="请输入您的所在地区" />
+  </view>
+  <button formType="submit" class="sign-button mt-60">提交</button>
+</form>

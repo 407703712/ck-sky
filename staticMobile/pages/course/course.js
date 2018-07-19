@@ -16,6 +16,6 @@ Page({
     ]
   },
   onLoad: function () {
-
+    wx.setNavigationBarTitle({ title: '课程' })
   }
 })

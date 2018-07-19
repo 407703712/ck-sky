@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="d-flex align-items-center justify-content-between p-20">
+  <view class="d-flex align-items-center mr-80">综合排序 <view class="xjt ml-20 w-xjt"></view></view>
+  <view class="d-flex align-items-center c-b f13">总计： <view class="c-red">1283</view>个职位</view>
+</view>
+<view class="ht-c"></view>
+<view class="list-contain" wx:for="{{listDatas}}">
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目</view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center c-b">
+      <view class="mr-40 f13">工作地点：珠海</view>
+      <view class="mr-40 f13">工作经验：5年</view>
+      <view class="mr-40 f13">学历要求：本科</view>
+    </view>
+  </view>
+</view>
+<view class="loadmore c-b">加载更多</view>

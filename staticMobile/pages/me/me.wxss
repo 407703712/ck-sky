@@ -72,3 +72,6 @@ view{
 	padding:20rpx;
 	border-bottom:1px solid #ccc;
 }
+.banner-img-c image {
+ width:100%;
+}

@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="banner-img-c">
+  <image src="../images/banner1.png" alt="" mode='widthFix'/>
+</view>
+<view class="d-flex align-items-center p-20">
+  <view class="d-flex align-items-center mr-80">综合排序 <view class="xjt ml-20 w-xjt"></view></view>
+  <view class="d-flex align-items-center">筛选 <view class="xjt ml-20 w-xjt"></view></view>
+</view>
+<view class="ht-c"></view>
+<view class="list-contain">
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-ing f13">招聘中</view></view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center">
+      <view class="mr-40"><image src="../images/weizhi.png" alt="" mode='widthFix'/> 珠海</view>
+      <view class="mr-40"><image class="w18" src="../images/studytime.png" alt="" mode='widthFix'/> 120天</view>
+      <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-start f13">已开始</view></view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center">
+      <view class="mr-40"><image src="../images/weizhi.png" alt="" mode='widthFix'/> 珠海</view>
+      <view class="mr-40"><image class="w18" src="../images/studytime.png" alt="" mode='widthFix'/> 120天</view>
+      <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center">
+      <view class="mr-40"><image src="../images/weizhi.png" alt="" mode='widthFix'/> 珠海</view>
+      <view class="mr-40"><image class="w18" src="../images/studytime.png" alt="" mode='widthFix'/> 120天</view>
+      <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center">
+      <view class="mr-40"><image src="../images/weizhi.png" alt="" mode='widthFix'/> 珠海</view>
+      <view class="mr-40"><image class="w18" src="../images/studytime.png" alt="" mode='widthFix'/> 120天</view>
+      <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
+      <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
+      <view class="moneynum f13">￥2000000</view>
+    </view>
+    <view class="list-content d-flex align-items-center">
+      <view class="mr-40"><image src="../images/weizhi.png" alt="" mode='widthFix'/> 珠海</view>
+      <view class="mr-40"><image class="w18" src="../images/studytime.png" alt="" mode='widthFix'/> 120天</view>
+      <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
+    </view>
+  </view>
+</view>
+<view class="loadmore c-b">加载更多</view>
