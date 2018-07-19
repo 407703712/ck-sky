@@ -1,0 +1,244 @@
+ul li {list-style: none;}
+.details-body{
+	background-color: #F8F8F8;
+}
+.container .Route_details{
+	padding-left: 5px;
+	font-size: 13px;
+	color:#979797;
+	line-height: 28px;
+}
+.container .btn1 .btn{
+	background-color:  #F8F8F8;
+	padding: 0px;
+	width: 50px;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	color:#979797;
+	font-size: 13px;
+}
+.made-details {
+	border: 1px solid #ccc;
+}
+.container .md-ds-top{
+	padding:15px 0px 15px 15px!important;
+	border-bottom: 1px solid #ccc;
+
+}
+.md-ds-top {
+	background-color: white;
+}
+.Inquiry{
+	margin: 2px 0px;
+}
+.Inquiry dt{
+	padding: 0px!important;
+	color: #979797;
+	font-weight: 100;
+}
+.md-ds-top dl{
+	font-size: 14px;
+}
+.Inquiry .ab{
+	border: 1px solid #ccc;
+	padding-left: 3px!important;
+	padding-right: 0px;
+	text-align: center;
+}
+.Inquiry .col-lg-3{
+	margin-right: 15px;
+
+}
+.md-ds-top ul li {
+	font-size: 13px;
+}
+.md-ds-top ul li img{
+  padding-right: 5px;
+}
+span{
+	color:#0366DB;
+
+}
+.ac {
+	padding: 10px 20px 10px 10px;
+}
+.md-ds-btu{
+    padding: 10px 0px;
+}
+.md-ds-btu button:disabled{
+	background-color: #E8E8E8;
+	color: #9F9F9F;
+	border: none;
+}
+.description{
+	margin-top: 20px;
+}
+.description .zt1 ,.company ,.zt1{
+	color: #9F9F9F;
+	font-size: 13px;
+}
+.description .zt1 li{
+	margin-right: 6px;
+}
+.img> li{
+	width: 80px;
+	height: 80px;
+}
+.img img{
+	width: 100%;
+}
+.description-list ,.company , .d-img{
+	border: 1px solid #ccc;
+	background-color: white;
+
+}
+.btn-2 {
+	border: 1px solid #ccc;
+	margin-right: 15px;
+	padding: 5px 5px;
+	border-bottom: none;
+	cursor: pointer;
+
+}
+.active{
+	border-bottom: none;
+	background-color:white;
+	border-top: 2px solid #016DD2;
+	position: relative;
+    top: 1px;
+}
+.description-list-top{
+	margin: 10px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px; 
+}
+.description-list-top:last-child{
+	border-bottom: none;
+}
+.a1 {
+	color: #0068DD;
+	margin-left: 15px;
+	text-decoration:underline;
+}
+.description-list-top .price-details{
+	font-size: 13px;
+	padding-left: 8px;
+	padding-top:2px; 
+
+}
+.price-details div{
+  display: inline-block;
+}
+.price-name {
+	width: 115px;
+	margin-right: 5px;
+}
+.login-time{
+	font-size: 14px;
+	margin-right: 21px;
+}
+.login-time p:last-child{
+  color: #979797;
+  font-size: 13px;
+}
+.company{
+	margin-top: 20px;
+	padding: 10px;
+}
+.company .company-details{
+	font-size: 13px;
+}
+.company-details div{
+	padding-left: 0;
+}
+.Quotes_Record{
+	margin: 20px 0;
+	padding: 10px;
+    background-color: white;
+    border:1px solid #ccc;
+}
+.record-table{
+	width:85%;table-layout:fixed;
+}
+.record-table tr th{
+	padding: 10px 0px 10px 9px;
+}
+.record-table tr td{
+	padding: 5px 4px;
+}
+.record-table tr td:first-child{
+	word-break : break-all;
+	padding-right: 8%;
+}
+
+.record-table tr{
+	border-bottom: 1px solid #ccc;
+   
+}
+.record-table tr:last-child{
+	border-bottom: none;
+}
+/*right*/
+.details-right{
+	margin-left: 1.5rem;
+}
+.right-list{
+	border: 1px solid #ccc;
+}
+.details-right h6{
+   padding: 5px 0px 0px 10px;
+}
+.user-date {
+	background-color: white;
+	border-top: 1px solid #ccc;
+	font-size: 13px;
+}
+.logo-date , .hall-logo {
+	padding: 10px 8px;
+}
+.hall-logo p{
+	word-break:break-all;
+}
+.logo-name , .hall-logo , .call{
+	text-align: center;
+}
+.logo-date ul li img{
+	margin-right: 3px;
+}
+.logo-date ul li{
+	margin-top: 2px;
+}
+.name-date {
+	padding-left: 50px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #ccc;
+}
+.call{
+	padding: 10px 0px;
+	border-top: 1px solid #ccc;
+}
+.call a{
+	color: #0366DB;
+	font-size:14px;
+}
+.list-da {
+	padding: 5px 0px;
+	margin-left: 9px;
+	margin-right: 9px;
+	border-bottom: 1px solid #ccc;
+}
+.list-da p:last-child{
+		color: #979797;
+}
+.ddc div {
+	padding: 0;
+	color: #979797;
+}
+@media (max-width:768px){
+	.name-date{
+		padding-left: 2px!important;
+	}
+	.record-table{
+		width: 100%;
+	}
+}

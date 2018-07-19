@@ -13,6 +13,11 @@ Page({
     indicatorActiveColor:"#1B7ED5",
     swiperItems:[{'img':'../images/banner1.png'},{'img':'../images/banner1.png'},{'img':'../images/banner1.png'}]
   },
+  goPartIndex:function(){
+    wx.navigateTo({
+      url: '/pages/partindex/partindex'
+    })
+  },
   onLoad: function () {
     wx.setNavigationBarTitle({ title: '首页' })
   }

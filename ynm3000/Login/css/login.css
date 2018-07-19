@@ -1,0 +1,184 @@
+/*公用*/
+.form_fa label {font-size:13px!important;font-weight: 100!important;}
+.all_body{margin-top: 40px}
+h3 {font-size: 25px}
+.container{line-height: 52px;}
+/*login-one*/
+.navbar-inverse{border-radius: 0px;background-color:#000; }
+.navbar-nav{color: white;}
+.navbar-inverse .navbar-nav>li>a{color: white}
+.nav>li:after{content: '';display: inline-block;width:1px;height: 12px;background: #fff;position: absolute;top:21px;right: 0;}
+.nav>li:last-child:after{display: none;}
+.nav>li>a{line-height: 32px;padding: 10px 25px}
+.login {width: 45%;margin:0 auto;box-sizing: border-box;}
+.login_title{border-bottom: 1px solid #ccc;margin-bottom: 60px;}
+.login_title h3,.login_title p{display: inline-block;margin-right: 15px;padding-bottom: 3px}
+.login_pass {width: 90%;margin: 0 auto;}
+.login_pass p:first-child{padding:0px 0px 20px 0px;color: black;font-size:13px;}
+.form_fa input{width: 100%;margin: 2px 0px}
+.Forget{text-align: right;}
+.Forget a{color: red!important;font-size: 12px;width: 100%;}
+.all_btm_f{position: fixed;bottom: 0px;height: 150px;background-color: #000;width: 100%;text-align: center;line-height: 35px;padding-top: 50px}
+.all_btm li{display: inline-block;padding-left: 40px;}
+.all_btm li a{color: white;}
+address{color: white}
+/*login-two*/
+.login_pass p>a{color: #016DDC}
+.login_btm_left{margin-top: 40px;display: inline-block;}
+.login_btm_left p{margin-top: 4px;font-size: 13px}
+.login_btm_left h4{color:red;}
+.btn-default{display: inline-block;margin: 0px 0px 20px 80px;line-height: 14px;font-size: 14px}
+/*login-three*/
+.form_fa{margin-top: 40px;text-align: left;}
+#login_password{margin-bottom: 10px;padding:2px 8px;}
+.login_word {margin-bottom: 5px;padding: 2px 8px}
+.btn-primary {float: right;width: 110px;background-color: #006ADA;margin-top: 5px;letter-spacing: 2px}
+#password_error{color: #FF3D15;font-size: 12px;text-align: right;}
+/*login-four*/
+.pass_Success{margin-top: 40px}
+.pass_Success img{width: 25px;float:left;margin-right: 10px;}
+.pass_Success h4{font-size: 19px;color: #000000;margin-top: 4px}
+.pass_Success a{float: right;font-size: 13px;margin: 20px 25px 0px 0px}
+.pass_Success a>img{width: 5px;margin: 5px 10px 3px 3px}
+/*login-five*/
+.Forget_pass a{color: #006EDD;font-size: 11px;margin-right: 30px;}
+/*login-six*/
+.form_fa i {color: red}
+.btn-Center {background-color: #016DDC;width: 240px;color: white;}
+.radio{font-size: 13px;color: #222;text-align: left;}
+/*login-seven*/
+.Reegistered{width: 300px;padding: 10px;}
+.Reegistered a{color: #006ADA;font-size: 11px;}
+.Reegistered a>img{width: 5px;margin: 7px 10px 3px 3px}
+.Reegistered p{margin:30px}
+.Reegistered h4{display: inline-block;font-size: 17px;color: #000000;padding-top: 8px}
+/* login-eight*/
+.icon-img{width: 25px}
+.complete p{font-size: 13px;color: black}
+.checkRss {width: 100%;background-color: #F8F8F8;box-sizing: border-box;margin-top: 15px;padding: 5px 0px 5px 15px}
+.checkRss li{font-size: 12px;margin-bottom: 15px;}
+.checkRss li div{display: inline-block;width:32%;margin: 2px 0;vertical-align: top;}
+.images {width: 100%;height: 40px;margin-top: 15px;}
+.images_col {display: inline-block;text-align: center;}
+.images_col p {font-size: 12px}
+/*login-nine*/
+.form_fa select,textarea {width:100%;padding: 4px 8px }
+textarea{
+	resize: none;
+}
+.select-c{
+	position: relative;
+}
+.select-plugin{
+	padding: 2px 8px;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.col-3 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+  height: 20px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+.col-12 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.xiajt{
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+	border-top: 8px solid #727272;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+.sjt-bd{
+	float: right;
+	border: 1px solid #333;
+	height: 7px;
+	width: 7px;
+	-webkit-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+	border-top: none;
+	border-right: none;
+	margin-top: 10px;
+}
+.d-none{
+	display: none;
+}
+.show-plugin-contain{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	-webkit-transform: translate(0,100%);
+	-ms-transform: translate(0,100%);
+	-o-transform: translate(0,100%);
+	transform: translate(0,100%);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100%;
+	margin: 0;
+	z-index: 99;
+	background-color: #fff;
+	max-height: 90px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+/*login-ten*/
+.Home {margin:20px 0px 0px 40px;width: 80px;height: 25px;border:1px solid #ccc;text-align: center;display: inline-block;}
+.Home a{font-size: 10px}
+.media-middle b{font-size: 22px;}
+#navbar{background: #000;}
+p.navbar-nav{
+
+}
+.slh{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.col-3 input{
+	width: auto;
+	margin: 0;
+	margin-right: 6px;
+}
+.name-txt{
+	font-size: 13px;
+}
+.xjt-bd{
+	float: right;
+	border: 1px solid #333;
+	height: 7px;
+	width: 7px;
+	-webkit-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+	border-bottom: none;
+	border-left: none;
+	margin-top: 6px;
+}
+@media screen and (max-width: 1000px){
+	.login{
+		width: 80%;
+	}
+}

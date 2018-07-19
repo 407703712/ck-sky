@@ -15,6 +15,11 @@ Page({
       {'img':"../images/img19.jpg",'title':'刘思高','content':'在讨论组中提交了新的观点','time':'1天前'},
     ]
   },
+  goMedtail:function(){
+    wx.navigateTo({
+      url: '/pages/medtail/medtail'
+    })
+  },
   onLoad: function () {
     wx.setNavigationBarTitle({ title: '我的' })
   }

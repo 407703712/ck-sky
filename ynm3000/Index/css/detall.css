@@ -1,0 +1,8 @@
+.mode-content{margin-bottom: 20px}
+.left-img-contain ul {margin-top: 10px}
+.left-img-contain ul h6{color: #5F5F5F}
+.left-img-contain ul li{list-style: none; font-size: 12px;padding: 10px 0px;border:none;}
+.left-img-contain ul li:last-child{border-bottom: 1px dashed #ccc}
+.left-img-contain ul:last-child li{border-bottom: none}
+.list-group h6 a.active{color: #0377FF}
+.right-img-contain{margin: 0 auto}

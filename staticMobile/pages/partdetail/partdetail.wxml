@@ -29,4 +29,4 @@
     <view>4、销售任务完成的直接责任人，总体负责客户关系的建立工作。</view>
   </view>
 </view>
-<view class="sign-button bg-green">我要兼职</view>
+<view class="sign-button bg-green" bindtap="goPartsign">我要兼职</view>

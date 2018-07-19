@@ -8,7 +8,7 @@
 </view>
 <view class="ht-c"></view>
 <view class="list-contain">
-  <view class="list-item">
+  <view class="list-item" bindtap="goPartDetail">
     <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
       <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-ing f13">招聘中</view></view>
       <view class="moneynum f13">￥2000000</view>
@@ -19,7 +19,7 @@
       <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
     </view>
   </view>
-  <view class="list-item">
+  <view class="list-item" bindtap="goPartDetail">
     <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
       <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-start f13">已开始</view></view>
       <view class="moneynum f13">￥2000000</view>
@@ -30,7 +30,7 @@
       <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
     </view>
   </view>
-  <view class="list-item">
+  <view class="list-item" bindtap="goPartDetail">
     <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
       <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
       <view class="moneynum f13">￥2000000</view>
@@ -41,7 +41,7 @@
       <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
     </view>
   </view>
-  <view class="list-item">
+  <view class="list-item" bindtap="goPartDetail">
     <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
       <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
       <view class="moneynum f13">￥2000000</view>
@@ -52,7 +52,7 @@
       <view class="mr-40"><image src="../images/class.png" alt="" mode='widthFix'/> 5人</view>
     </view>
   </view>
-  <view class="list-item">
+  <view class="list-item" bindtap="goPartDetail">
     <view class="list-title-c d-flex justify-content-between align-items-end mb-2">
       <view class="list-title fb f17 align-items-end d-flex">某某大型项目 <view class="pro-state pro-end f13">已完成</view></view>
       <view class="moneynum f13">￥2000000</view>

@@ -75,3 +75,23 @@ view{
 .banner-img-c image {
  width:100%;
 }
+.me-top-c{
+	background-color:#2A93FE;
+	text-align:center;
+	padding:40rpx 0;
+}
+.userinfo-avatar{
+  overflow:hidden;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  border-radius:10rpx;
+  margin-bottom:10rpx;
+}
+.avatext{
+	text-align:center;
+	color:white;
+	font-size:40rpx;
+	
+}

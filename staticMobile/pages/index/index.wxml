@@ -13,10 +13,10 @@
 <view class="ht-c"></view>
 <view class="subnav d-flex justify-content-around">
   <view><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view>调研</view></view>
-  <view><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view>调研</view></view>
-  <view><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view>调研</view></view>
-  <view><image src="../images/about-icon-5.png" alt="" mode='widthFix'/><view>调研</view></view>
-  <view><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view>调研</view></view>
+  <view><image src="../images/about-icon-3.png" alt="" mode='widthFix'/><view>猎头</view></view>
+  <view><image src="../images/about-icon-4.png" alt="" mode='widthFix'/><view>法律</view></view>
+  <view><image src="../images/about-icon-5.png" alt="" mode='widthFix'/><view>外包</view></view>
+  <view bindtap="goPartIndex"><image src="../images/about-icon-2.png" alt="" mode='widthFix'/><view>兼职</view></view>
 </view>
 <view class="ht-c"></view>
 <view class="class-content">

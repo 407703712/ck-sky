@@ -1,0 +1,131 @@
+.container .Route_details {
+    padding-left: 5px;
+    font-size: 13px;
+    color: #979797;
+    line-height: 28px;
+}
+.logo img{
+	width: 100%
+}
+.logo{
+
+}
+.cl{
+	color: #A0A0A0;
+}
+.border-bot {
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0px;
+}
+.wd0{
+	width: 100px;
+}
+.zt12{
+	font-size: 12px;
+}
+.zt13{
+	font-size: 13px;
+}
+.zt14{
+	font-size: 14px;
+}
+span{
+	color: #0167CB;
+}
+.details-body{
+	background-color: #F8F8F8;
+}
+.design .row p{
+	padding: 0;
+}
+.design .row{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.design{
+	background-color: white;
+	padding: 20px 5px 0px 10px;
+	border-bottom:1px solid #ccc;;
+	
+}
+.bor{
+	border:1px solid #ccc;
+}
+.design img{
+    margin-right: 8px;
+}
+.pd{
+	padding: 15px 10px 15px 10px;
+}
+.bg{
+	background-color: white;
+	margin-top: 20px;
+}
+.zt0 a{
+	color: #0068DD;
+}
+.Underline a{
+	text-decoration: underline;
+}
+.footer-btn{
+    padding: 20px 0;
+	text-align: center;
+}
+.footer-btn .btn{
+	padding: 3px 20px;
+}
+.table {
+	text-align: center;
+	table-layout: fixed;
+	min-height: 238px;
+	position: relative;
+}
+.table th{
+	padding: 10px 0px;
+	text-align: center;
+	background:url(../images/demand_images/bg.png) repeat-x;
+    position: relative;
+    white-space:nowrap;
+    color: white;
+}
+.table td{
+	background-color: transparent;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+.table-head th{
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+table tr{
+	background-color: white;
+}
+table tr:hover{
+	background-color: #DAEAF9 !important;
+	color: #006DD4;
+	font-weight: bold;
+}
+.table-head th:before {
+    content: '';
+    width: 2px;
+    height: 40px;
+    background-color: #7e7e7e;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.dagou{
+	background-color: #DAEAF9 !important;
+	color: #006DD4;
+	font-weight: bold;
+	background-image: url('../images/dagou.png');
+	background-repeat: no-repeat;
+	background-size: 13px;
+	background-position:2px 8px;
+}
+.nothing{
+	display: none;
+}
+body{
+	background-color: #F8F8F8;
+}

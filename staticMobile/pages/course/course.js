@@ -15,6 +15,11 @@ Page({
       {'img':"../images/img19.jpg",'title':'刘思高','content':'在讨论组中提交了新的观点','time':'1天前'},
     ]
   },
+  goCoursedetail:function(){
+    wx.navigateTo({
+      url: '/pages/coursedetail/coursedetail'
+    })
+  },
   onLoad: function () {
     wx.setNavigationBarTitle({ title: '课程' })
   }

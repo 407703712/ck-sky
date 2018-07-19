@@ -20,5 +20,5 @@
 <view class="class-introduce pb-40">
   <view class="f17 fb mb-16 title">课程介绍</view>
   <view>所属专题执行力、赢在执行培训、从技术走向管理培训、高效执行力与团队合作、工厂... ...</view>
-  <view class="sign-button">预约报名</view>
+  <view class="sign-button" bindtap="goCoursesign">预约报名</view>
 </view>
