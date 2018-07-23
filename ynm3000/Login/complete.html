@@ -128,6 +128,43 @@
 					  </div>
 					</li>
 				</ul>
+				
+			
+				<ul class="checkRss">
+					<li>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Importer
+						    </label>
+					  	</div>
+					</li>
+					<li>
+					  	<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Manufacturer
+						    </label>
+					  	</div>
+					</li>					
+				</ul>	
+				
+				<ul class="checkRss">
+					<li>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Decoration Company
+						    </label>
+					  	</div>
+					</li>
+					<li>
+					  	<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Individual Designer
+						    </label>
+					  	</div>
+					</li>					
+				</ul>					
+				
+				
 				<p style="font-size: 11px"><b style="color: black">Node:</b>For a single identily,users can choose up to two user roles.Please choose carefully. Different rolse provide defferent services.For details,please refer to <a href="">"User Registration Agreement."</a></p>
 			</div>
 			<button type="submit" class="btn  btn-Center" style="display: block;margin: 0 auto;margin-top: 15px;">Register</button>
@@ -158,6 +195,41 @@
 		event.preventDefault();
 		location.href="commit-success.html";
 	});
+	
+	
+	
+	  $('.images_col').each(function(i){
+		  $(this).click(function(){
+		  	$('.images_col p').css('color','#666')
+		  	$('.checkRss').hide()
+		  	$('.checkRss').eq(i).fadeIn()
+			if (i ==0){				
+			  	$('.icon-img').eq(0).attr('src','image/car01.png')
+			  	$('.images_col p').eq(0).css('color','#3BB2FE')
+			  	
+			  	$('.icon-img').eq(1).attr('src','image/dianpu.png')
+			  	$('.icon-img').eq(2).attr('src','image/sell.png')
+		  		
+		  		
+			}else if (i ==1){
+			  	$('.icon-img').eq(1).attr('src','image/dianpu01.png')
+			  	$('.images_col p').eq(1).css('color','#3BB2FE')
+			  	
+			  	$('.icon-img').eq(0).attr('src','image/car.png')
+			  	$('.icon-img').eq(2).attr('src','image/sell.png')
+			}else if (i ==2){
+			  	$('.icon-img').eq(2).attr('src','image/sell01.png')
+			  	$('.images_col p').eq(2).css('color','#3BB2FE')
+			  	
+			  	$('.icon-img').eq(0).attr('src','image/car.png')
+			  	$('.icon-img').eq(1).attr('src','image/dianpu.png')
+			}
+		  });if (i==0){$(this).click()}
+	  })	
+	
+	
+	
+	
 </script>
 </body>
 </html>

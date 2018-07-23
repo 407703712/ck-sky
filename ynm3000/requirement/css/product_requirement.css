@@ -18,7 +18,8 @@ ul li{
 	font-size: 14px;
 }
 .timer .wd-10{
-	width: 124px;
+	width: 130px;
+	white-space: nowrap;
 }
 .p-l{
 	padding: 10px 10px!important;
@@ -71,6 +72,7 @@ span{
 }
 .seach-btn button ,.seach-btn input{
 	width: 80%;
+	margin: 0 auto;
 	margin-top: 10px;	
 }
 .seach-btn input{
@@ -230,7 +232,9 @@ span{
 .type-list li div{
 	float: left;
 }
-
+.t-table tr:hover{
+	background-color: #DAEAF9 !important;
+}
 @media (max-width: 768px){
 .seaach-list{
 

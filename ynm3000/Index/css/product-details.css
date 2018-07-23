@@ -18,6 +18,10 @@ span {color: #FF3300}
 .sub-container{
 	border-bottom: 1px solid #ccc;
 }
+.header_publish_list{
+	background-color: #fff;
+	margin: 15px auto;
+}
 .item-list-left .swiper-container{
 	padding-top: 10px;
 }
@@ -71,7 +75,7 @@ span {color: #FF3300}
 .typeList .row .col-7 td {max-width: 92px}
 .media-left {height: 40%!important}
 .media-left li {margin:10px 0;}
-.media-left,.media-right{background-color: white}
+
 .solids {border: 1px dashed #ccc; 
          border-right: none;
          border-left: none;
@@ -94,7 +98,7 @@ tr td:first-child{color:#9F9F9F;}
 .body-top {background-color: #F8F8F8}
 .media-right ul li a{ font-size: 14px;padding:0;margin: 5px 11px 5px 10px;color: white!important }
 .media-right .navbar-expand-lg {background-color: #333333;padding: 0px}
-.btn-list {margin:20px 5px 18px 5px;}
+.btn-list {margin:20px;}
 .media-right-btn .btn-list img{width: 100%}
 .form-left-img {width: 20%;float: left;}
 .form-right{width: 80%;float: right;font-size: 15px;}
@@ -202,7 +206,7 @@ tr td:first-child{color:#9F9F9F;}
 }
 .fix-form h6 {border-bottom: 1px solid #ccc;}
 .d-flex select {width: 100px}
-.d-flex textarea{width: 300px}
+.d-flex textarea{width: 80%}
 textarea{resize: none;}
 .flex-txt {
 	width: 70px;	
@@ -214,3 +218,46 @@ textarea{resize: none;}
 	margin-bottom: 15px;
 }
 
+.container{
+	padding: 0;
+}
+
+.New_Products{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.ProductBox{
+	width: 100%;
+	background-color: #fff;
+}
+.clearfix{
+	clear: both;
+}
+.Report{
+	padding:0 20px;
+	line-height: 20px;
+	color: #FF3B0A;	
+	position: relative;
+	text-align: right;
+	font-size: 0.8rem;
+}
+.Report_Img{
+	position: absolute;
+	top: 4px;
+	right: 60px;
+}
+.btn-form{
+	padding: 20px;
+}
+.mb-15{
+	margin-bottom: 15px;
+}
+.media-right {
+    padding-right: 0 !important;
+}
+#navbarNav .active {
+    background-color: #016BD3!important;
+    color: white;
+}

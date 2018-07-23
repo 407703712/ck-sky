@@ -58,7 +58,6 @@ body{
 	margin: 0 10px;
 }
 .add-input-contain{
-	display: none;
 	position: absolute;
 	right: 0;
 	top: -12px;
@@ -75,9 +74,11 @@ body{
 	width: 60%;
 
 }
-.sub1 .issub1:after{
-	position: absolute;
-	content: "";
+.jiantou{
+	/*position: absolute;
+	left: -15px;
+	top: 2px;	*/
+	display: inline-block;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
@@ -87,9 +88,25 @@ body{
 	width: 10px;
 	height: 10px;
 	border: 1px solid #595959;
-	left: -15px;
-	top: 2px;
+	transition: all 200ms;
+	
 }
+.jiantou_active{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);	
+}
+.align-items-center {
+	position: relative;
+}
+.New_Hot:hover{
+	color: #3AB2FF;
+}
+.margin_bottom1rem{
+	margin-bottom: 1.2rem!important;
+}
+
 .sub2 .w44p{
 	padding-left: 3rem !important;
 }
@@ -102,7 +119,7 @@ body{
 .full-table .sub3-contain .bb-dg:last-child{
 	border-bottom: 1px dashed #ccc;
 }
-.sub2 .issub2:after{
+/*.sub2 .issub2:after{
 	position: absolute;
 	content: "";
 	-webkit-transform: rotate(45deg);
@@ -116,7 +133,7 @@ body{
 	border: 1px solid #595959;
 	left: -15px;
 	top: 2px;
-}
+}*/
 .zjt{
 	display: inline-block;
 	-webkit-transform: rotate(45deg);
@@ -182,7 +199,7 @@ body{
 	background-color: #E8E8E8;
 }
 .vircheck{
-	width: 30px;
+	width: 120px;
 	height: 30px;
 }
 .full-table{
@@ -314,3 +331,6 @@ body{
 	    border-right: 13px solid #F8F8F8;
 	}
 }
+
+
+

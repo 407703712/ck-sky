@@ -45,7 +45,7 @@
 			</div>
 			<div class="d-flex mflex-tabs mt-2 flex-wrap">
 				<div class="p-2 virtual-bd-r">Flooring</div>
-				<div class="active p-2 virtual-bd-r">Tools</div>
+				<div class="p-2 virtual-bd-r">Tools</div>
 				<div class="p-2 virtual-bd-r">Curtain Nonwoven</div>
 				<div class="p-2 virtual-bd-r">Title</div>
 				<div class="p-2 virtual-bd-r">Marble</div>
@@ -260,27 +260,27 @@
 						<div class="title-bold">Recruitiment</div>
 						<div class="bold-blue"></div>
 						<div class="row">
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-6.png" alt="">
-								<p class="active tline-sl">Java Developmentgineer</p>
+								<p class="tline-sl">Java Developmentgineer</p>
 							</div>
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-7.png" alt="">
 								<p class="tline-sl">Java Developmentgineer</p>
 							</div>
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-8.png" alt="">
 								<p class="tline-sl">System Operation and Maintenance Engineer</p>
 							</div>
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-10.png" alt="">
 								<p class="tline-sl">Front-end developmentengineer</p>
 							</div>
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-11.png" alt="">
 								<p class="tline-sl">Java Developmentgineer</p>
 							</div>
-							<div class="hoverf col-lg-2 col-xl-2 col-sm-4 col-md-4 p-2">
+							<div class="col-lg-2 col-xl-2 col-sm-4 col-md-4 JavaSystem">
 								<img src="./images/about-icon-12.png" alt="">
 								<p class="tline-sl">Java Developmentgineer</p>
 							</div>
@@ -403,5 +403,57 @@
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/swiper-4.3.3.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
+	<script type="text/javascript">
+	  $('.JavaSystem').each(function(i){
+		  $(this).hover(function(){
+		  	$('.tline-sl').css('color','#666')
+		  	$('.tline-sl').eq(i).css('color','#3BB2FE')
+
+			if (i ==0){				
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-601.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-7.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-8.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-10.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-11.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-12.png')			  
+			}else if (i ==1){
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-6.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-701.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-8.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-10.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-11.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-12.png')		
+			}else if (i ==2){
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-6.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-7.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-801.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-10.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-11.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-12.png')		
+			}else if (i ==3){
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-6.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-7.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-8.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-1001.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-11.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-12.png')		
+			}else if (i ==4){
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-6.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-7.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-8.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-10.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-1101.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-12.png')		
+			}else if (i ==5){
+			  	$('.JavaSystem img').eq(0).attr('src','images/about-icon-6.png')			  
+			  	$('.JavaSystem img').eq(1).attr('src','images/about-icon-7.png')			  
+			  	$('.JavaSystem img').eq(2).attr('src','images/about-icon-8.png')			  
+			  	$('.JavaSystem img').eq(3).attr('src','images/about-icon-10.png')			  
+			  	$('.JavaSystem img').eq(4).attr('src','images/about-icon-11.png')			  
+			  	$('.JavaSystem img').eq(5).attr('src','images/about-icon-1201.png')		
+			}
+		  });
+	  })			
+	</script>
 </body>
 </html>

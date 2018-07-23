@@ -12,3 +12,33 @@
 .all-mous:hover{box-shadow: -3px 0px 3px #e5e5e5, -3px 0px 3px #e5e5e5, 0 3px 3px #e5e5e5, 3px 0 3px #e5e5e5;}
 .mode-content p {font-size: 14px;color: #6E6E6E;}
 .mode-content .d-flex span{color: red;font-weight: bold;padding: 0px 5px;font-size: 14px}
+
+.all-item-block img,.bigScrool img{
+	transition: all 200ms;
+}
+
+.bigScrool img:hover{
+	width: 80%;
+	height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

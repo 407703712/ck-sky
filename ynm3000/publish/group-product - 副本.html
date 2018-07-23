@@ -116,7 +116,7 @@
 				<div class="p3 pl-4 pr-4 pt-3">
 					<div class="d-flex justify-content-between mb-2">
 						<div class="bl-title">Group & Rank Products</div>
-						<div class="f13"><span class="New_Hot">New Products Rank</span><span class="mr-4 ml-4 New_Hot">Hot Sales Rank</span><span class="New_Hot">Promotional Products Rank</span></div>
+						<div class="f13"><span>New Products Rank</span><span class="mr-4 ml-4">Hot Sales Rank</span><span>Promotional Products Rank</span></div>
 					</div>
 					<div class="d-flex justify-content-center form-inline align-items-center pt-4 pb-4">
 						<img src="./release_img/add-blue.png" alt="" style="width: 30px;height: 30px;" class="mb-lg-0 mb-md-4">
@@ -136,15 +136,14 @@
 						</div>
 						<div class="pt-0 pb-0 pr-4 pl-4">
 							<div class="d-flex bb-dg align-items-center pt-2 pb-2 sub1 havesub2" onclick="slideSub2(this)">
-								<div class="w44p text-left pl-4 ">									
+								<div class="w44p text-left pl-4 ">
 									<div class="issub1">
-										<div class="jiantou jiantou_active"></div>
 										Class I Product Type 1(1250)
 									</div>
 								</div>
 								<div class="w14p" onclick="addSubclass(this)">
 									+Add
-									<div class="add-input-contain form-inline d-flex d-none">
+									<div class="add-input-contain form-inline" style="display: none;">
 										<input type="text" class="form-control" style="height: 38px;">
 										<button class="btn btn-primary" style="width: 75px;height: 38px" onclick="enterAddSub(this)">OK</button>
 										<button class="btn btn-default" style="width: 75px;height: 38px" onclick="hideSelf(this)">Cancle</button>
@@ -162,15 +161,14 @@
 							</div>
 							<div class="sub2-contain">
 								<div class="d-flex bb-dg align-items-center pt-2 pb-2 sub2 havesub3" onclick="slideSub3(this)">
-									<div class="w44p text-left pl-4 ">										
+									<div class="w44p text-left pl-4 ">
 										<div class="issub2">
-											<div class="jiantou jiantou_active"></div>
 											Class I Product Type 1(1250)
 										</div>
 									</div>
 									<div class="w14p" onclick="addSubclass(this)">
 									+Add
-									<div class="add-input-contain form-inline d-flex d-none">
+									<div class="add-input-contain form-inline">
 										<input type="text" class="form-control" style="height: 38px;">
 										<button class="btn btn-primary" style="width: 75px;height: 38px" onclick="enterAddSub(this)">OK</button>
 										<button class="btn btn-default" style="width: 75px;height: 38px" onclick="hideSelf(this)">Cancle</button>
@@ -188,9 +186,8 @@
 								</div>
 								<div class="sub3-contain">
 										<div class="d-flex bb-dg align-items-center pt-2 pb-2 sub3">
-											<div class="w44p text-left pl-4 ">												
+											<div class="w44p text-left pl-4 ">
 												<div class="issub3">
-													<div class="jiantou jiantou_active"></div>
 													Class I Product Type 1(1250)
 												</div>
 											</div>
@@ -217,8 +214,8 @@
 								<button class="start-btn btn btn-secondary"></button>
 								<button class="btn btn-default active">1</button>
 								<button class="btn btn-default">2</button>
-								<button class="btn btn-default">3</button>
-								<button class="btn btn-default">4</button>
+								<button class="btn btn-default" onclick="showdiv(this)">3</button>
+								<button class="btn btn-default" onclick="hidediv(this)">4</button>
 								<button class="btn btn-default">5</button>
 								<div class="mr15p"><img src="./release_img/shenlue-black.png" alt=""></div>
 								<button class="btn btn-default">19</button>
@@ -483,140 +480,21 @@
 	<script type="text/javascript" src="./js/swiper-4.3.3.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
 	<script type="text/javascript">
-		$(".add-products").click(function(event) {
-			/* Act on the event */
-			$(".layer-contain").show();
-		});
-		$(".hide-layer").click(function(event) {
-			/* Act on the event */
-			$(".layer-contain").hide();
-		});
-		$("#allcheck").change(function(event) {
-			/* Act on the event */
-			if($(this).prop('checked')){
-				$(".full-table input[type='checkbox']").prop('checked',true);
-			}else{
-				$(".full-table input[type='checkbox']").prop('checked',false);
-			}
-		});
-		$("#allcheckLayer").change(function(event) {
-			/* Act on the event */
-			if($(this).prop('checked')){
-				$(".layer-contain .full-table input[type='checkbox']").prop('checked',true);
-			}else{
-				$(".layer-contain .full-table input[type='checkbox']").prop('checked',false);
-			}
-		});
-		function addSubclass(ele,ev){
-			event.stopPropagation();
-			$(ele).find('.add-input-contain').removeClass('d-none');
+		function showdiv (ele) {
+			// body... 
+			$('.add-input-contain').show();
 		}
-		function enterAddSub(ele){
-			var subName=$(ele).prevAll('.form-control').val();
-			var isFlag=$(ele).closest('.w14p').prev().children().prop('className');
-			
-			var lists2='<div class="d-flex bb-dg align-items-center pt-2 pb-2 sub2" onclick="slideSub3(this)">'+
-									'<div class="w44p text-left pl-4 ">'+
-										'<div class="issub2">'+
-											subName+
-										'</div>'+
-									'</div>'+
-									'<div class="w14p" onclick="addSubclass(this)">'+
-									'+Add'+
-									'<div class="add-input-contain form-inline d-flex d-none">'+
-										'<input type="text" class="form-control" style="height: 38px;">'+
-										'<button class="btn btn-primary" style="width: 75px;height: 38px" onclick="enterAddSub(this)">OK</button>'+
-										'<button class="btn btn-default" style="width: 75px;height: 38px" onclick="hideSelf(this)">Cancle</button>'+
-									'</div>'+
-								'</div>'+
-									'<div class="w14p">'+
-										'<img src="./release_img/close-red.png" alt="" class="close-red mr-2" onclick="delThis(this)">'+
-									'</div>'+
-									'<div class="w14p">'+
-										'<img src="./release_img/rank.png" alt="" class="rank-black mr-4">'+
-									'</div>'+
-									'<div class="w14p" onclick="toRank()">'+
-										'Rank'+
-									'</div>'+
-						'</div>';
-			var lists3=	'<div class="d-flex bb-dg align-items-center pt-2 pb-2 sub3">'+
-									'<div class="w44p text-left pl-4 ">'+
-										'<div class="issub3">'+
-											subName+
-										'</div>'+
-									'</div>'+
-									'<div class="w14p">'+
-								'</div>'+
-									'<div class="w14p">'+
-										'<img src="./release_img/close-red.png" alt="" class="close-red mr-2" onclick="delThis(this)">'+
-									'</div>'+
-									'<div class="w14p">'+
-										'<img src="./release_img/rank.png" alt="" class="rank-black mr-4">'+
-									'</div>'+
-									'<div class="w14p" onclick="toRank()">'+
-										'Rank'+
-									'</div>'+
-						'</div>';		
-			if (isFlag=="issub1") {
-				var haveC=$(ele).closest('.w14p').parent().next().hasClass('sub2-contain');
-				if(haveC){
-					$(ele).closest('.w14p').parent().next().append(lists2);
-				}else{
-					lists2='<div class="sub2-contain">'+lists2+'</div>';
-					$(ele).closest('.w14p').parent().after(lists2);
-				}
-			}
-			if (isFlag=="issub2") {
-				var haveC=$(ele).closest('.w14p').parent().next().hasClass('sub3-contain');
-				if (haveC) {
-					$(ele).closest('.w14p').parent().next().append(lists3);
-				}else{
-					lists3='<div class="sub3-contain">'+lists3+'</div>';
-					$(ele).closest('.w14p').parent().after(lists3);
-				}
-
-			}
+		function hidediv (ele) {
+			// body... 
+			$('.add-input-contain').hide();
 		}
-		function slideSub2(ele){
-			var haveC=$(ele).next().hasClass('sub2-contain');
-			if (haveC) {
-				$(ele).next().slideToggle();
-				$(ele).find('.jiantou').toggleClass('jiantou_active') 
-			}
-		}
-		function slideSub3(ele){
-			var haveC=$(ele).next().hasClass('sub3-contain');
-			if (haveC) {
-				$(ele).next().slideToggle();
-				$(ele).find('.jiantou').toggleClass('jiantou_active') 
-
-			}
+		function addSubclass(ele){
+			$(ele).find('.add-input-contain').show();
 		}
 		function hideSelf(ele){
 			event.stopPropagation();
-			$(ele).parent().addClass('d-none');
+			$(ele).parent().hide();
 		}
-		function delThis(ele){
-			$(ele).parent().parent().remove();
-		}
-		function toRank(ev) {
-			event.stopPropagation();
-			$(".group-panel").hide();
-			$(".rank-panel").show();
-		}
-		$(function(){
-			var bodyW=$("body").width();
-			$(".add-input-contain").width(bodyW*0.28);
-			$(window).resize(function(event) {
-				/* Act on the event */
-				var bodyW=$("body").width();
-				$(".add-input-contain").width(bodyW*0.28);
-			});
-			$(".add-input-contain .btn-default").click(function(event) {
-				/* Act on the event */
-				$(this).parent().hide();
-			});
-		})
 	</script>
 </body>
 </html>

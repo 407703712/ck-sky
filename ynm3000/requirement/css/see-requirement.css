@@ -114,6 +114,9 @@ table tr:hover{
     top: 0;
     right: 0;
 }
+h6{
+	font-weight: bold;
+}
 .dagou{
 	background-color: #DAEAF9 !important;
 	color: #006DD4;

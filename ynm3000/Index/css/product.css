@@ -10,7 +10,7 @@
 }
 .bl-title{
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 15px;
 	line-height: 1;
 }
 .list-c{
@@ -18,7 +18,7 @@
 	overflow:hidden;
 	overflow-y: auto; 
 	color: #808080;
-	font-size: 15px;
+	font-size: 14px;
 }
 .img-c img{
 	width: 100%;
@@ -66,14 +66,14 @@
 	flex: 0 0 100px;
 }
 .mr15{
-	flex: 0 0 150px;
+	flex: 0 0 130px;
 }
 .top-item-c{
 	background-color: #F8F8F8;
 }
 .bb-dashed{
 	border-bottom: 1px dashed #ccc;
-	padding: 10px 0;
+	padding: 5px 0;
 }
 .form-group label{
 	margin-right: 15px;
@@ -124,10 +124,23 @@
 	font-size: 14px;
 }
 .mt-f5{
-	margin-top: -5px;
+	position: absolute;
+    right: -14%;
+    top: 0%;
+    color: #007BEF;
+    background-color: transparent;
+    border: none;
+    outline-style: none;
+}
+
+.gg-num-comtain{
+	/*overflow: hidden;*/
+	white-space: nowrap;
+	position: relative;
 }
 .gg-num-comtain .gg-num{
 	margin-right: 6px;
+	float: left;
 }
 .fz-15{
 	font-size: 15px;
@@ -141,6 +154,9 @@
 .f-grey{
 	color: #bbb;
 }
+.f-grey:hover{
+	color: #007BEF;
+}
 .w100{
 	width: 100%;
 }
@@ -152,6 +168,7 @@
 }
 .brc{
 	border-right: 1px solid #ddd;
+	position: relative;
 }
 .start-btn,.end-btn{
 	position: relative;
@@ -256,53 +273,6 @@
 .mh500{
 	min-height: 500px;
 }
-.product-block .bl-title:hover{
-	color: #1B7DE0;
-}
-.shenlue-img-contain{
-	position: relative;
-	
-}
-.all-shenlue{
-	display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-	padding: 8px;
-	border-radius: 3px;
-	box-shadow: 3px 3px 3px #eee;
-	border: 1px solid #ddd;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 240px;
-	background: #fff;
-	z-index: 99;
-	-webkit-transform: translate(-92%,100%);
-	-ms-transform: translate(-92%,100%);
-	-o-transform: translate(-92%,100%);
-	transform: translate(-92%,100%);
-}
-.all-shenlue:after{
-	position: absolute;
-	content: "";
-	border-bottom: 10px solid #ddd;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	top: -10px;
-	right: 2%;
-	margin-left: -2px;
-}
-.all-shenlue:before{
-	position: absolute;
-	content: "";
-	border-bottom: 10px solid #fff;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	top: -9px;
-	right: 2%;
-	margin-left: -2px;
-	z-index: 10;
-}
 @media (min-width: 768px) and (max-width: 998px){
 	.progation-contain  .form-inline{
 	  -webkit-box-orient: vertical !important;
@@ -315,8 +285,48 @@
 	     width: auto; 
 	}
 }
-@media (min-width: 1200px){
-	.container {
-	    max-width: 85%;
-	}
+.mt-jiantou{
+	width: 0.8rem;
+	height: 0.5rem;
+	position: absolute;
+	bottom: 5%;
+	right: 0%;
+	transform: rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
+	transition: all 200ms;
+}
+.jiantou_active{
+	transform: rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+	-webkit-transform:rotate(-180deg);	
+}
+.shenglueBox{
+	width: 104%;
+	position: absolute;
+    top: 100%;
+    right: -4%;
+	background-color: #fff;	
+	border: 1px solid #ddd;
+	z-index: 999;
+	padding:10px 0 10px 5%;
+	display: none;
+	box-shadow: 0px 10px 25px 0px #ddd;
+}
+.block .list-c div:hover{
+    color: #007BEF;
+    font-weight: bold;
+}
+.Online_active:hover,a:hover{
+	color: #007BEF;
+}
+/*隐藏滚动条*/
+.list-c{
+  overflow-y: scroll;
+}
+.list-c::-webkit-scrollbar {
+  display: none;
+}
+.list-c {
+  -ms-overflow-style: none;
 }
